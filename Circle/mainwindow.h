@@ -2,6 +2,11 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QApplication>
+#include <QPushButton>
+#include <QHBoxLayout>
+#include <QPainter>
+#include "drawpanel.h"
 
 namespace Ui {
 class MainWindow;
@@ -16,6 +21,7 @@ public:
     ~MainWindow();
 
 private:
+    DrawPanel *drawPanel;
     Ui::MainWindow *ui;
 };
 
