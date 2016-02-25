@@ -2,12 +2,17 @@
 #define DRAWPANEL_H
 
 #include <QWidget>
+#include <QPainter>
 
 class DrawPanel : public QWidget
 {
 public:
 	DrawPanel( QWidget *parent = 0);
 	~DrawPanel();
+protected:
+	void paintEvent( QPaintEvent *event );
+private:
+	QPainter *painter;
 };
 
 #endif // DRAWPANEL_H
