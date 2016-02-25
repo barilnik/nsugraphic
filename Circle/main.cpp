@@ -1,8 +1,5 @@
 #include "mainwindow.h"
 #include <QApplication>
-#include <QPushButton>
-#include <QHBoxLayout>
-#include <QTextEdit>
 
 int main(int argc, char *argv[])
 {

@@ -3,10 +3,7 @@
 
 #include <QMainWindow>
 #include <QApplication>
-#include <QPushButton>
-#include <QHBoxLayout>
-#include <QPainter>
-#include "drawpanel.h"
+#include <QGridLayout>
 
 namespace Ui {
 class MainWindow;
@@ -17,12 +14,13 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = 0);
+    MainWindow( QWidget *parent = 0 );
     ~MainWindow();
 
 private:
-    DrawPanel *drawPanel;
-    Ui::MainWindow *ui;
+	Ui::MainWindow *ui;
+	QAction *saveAction;
+	QAction *loadAction;
 };
 
 #endif // MAINWINDOW_H
