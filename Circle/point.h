@@ -5,7 +5,7 @@
 #include <QPoint>
 #include <QPainter>
 
-class Point
+class Point : QWidget
 {
 	Q_OBJECT
 public:
@@ -14,8 +14,8 @@ public:
 private:
 	int posX;
 	int posY;
-
-	void setX( int x = 0 );
+public slots:
+	void setX( int x = 0);
 	void setY( int y = 0 );
 };
 

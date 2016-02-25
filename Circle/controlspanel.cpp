@@ -5,12 +5,12 @@ ControlsPanel::ControlsPanel( QWidget *parent, const int &x, const int &y, const
 	controlsLayout = new QGridLayout( this );
 
 	this->setMaximumWidth(200);
-	this->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Minimum);
+	this->setSizePolicy( QSizePolicy::Fixed, QSizePolicy::Minimum );
 
-	this->setElements(x, y, r);
+	this->setWidgets( x, y, r );
 
-	controlsLayout->setAlignment(Qt::AlignTop);
-	this->setLayout(controlsLayout);
+	controlsLayout->setAlignment( Qt::AlignTop );
+	this->setLayout( controlsLayout );
 }
 ControlsPanel::~ControlsPanel()
 {
@@ -32,7 +32,7 @@ void changeR( const int &r )
 	emit rChanged(r);
 }
 
-QMap< QString, QString >* getData()
+QMap< QString, QString >* ControlsPanel::getData()
 {
 	QMap<QString, QString> *map = new QMap< QString, QString >();
 	map->insert( tr( "PosX" ), QString::number( xSlider->value() ) );
@@ -42,7 +42,7 @@ QMap< QString, QString >* getData()
 	return map;
 }
 
-void changeData( QMap< QString, QString > map )
+void ControlsPanel::changeData( QMap< QString, QString > map )
 {
 	xSlider->setValue(map.value(tr("PosX")).toInt());
 	ySlider->setValue(map.value(tr("PosY")).toInt());
@@ -52,7 +52,7 @@ void changeData( QMap< QString, QString > map )
 	rSpinBox->setValue(map.value(tr("R")).toInt());
 }
 
-QSpinBox* spinBoxInit(const int &min, const int &max, const int &current)
+QSpinBox* ControlsPanel::spinBoxInit(const int &min, const int &max, const int &current)
 {
 	QSpinBox *spinBox = new QSpinBox(this);
 	spinBox->setRange(min, max);
@@ -63,7 +63,7 @@ QSpinBox* spinBoxInit(const int &min, const int &max, const int &current)
 	return spinBox;
 }
 
-QSlider* sliderInint(const int &min, const int &max, const int &current)
+QSlider* ControlsPanel::sliderInint(const int &min, const int &max, const int &current)
 {
 	QSlider *slider = new QSlider(Qt::Horizontal, this);
 	slider->setRange(min, max);
@@ -74,7 +74,7 @@ QSlider* sliderInint(const int &min, const int &max, const int &current)
 	return slider;
 }
 
-QLabel* textFieldInit(const char *str)
+QLabel* ControlsPanel::textFieldInit(const char *str)
 {
 	QLabel *label = new QLabel(this);
 	label->setText(str);
@@ -83,7 +83,7 @@ QLabel* textFieldInit(const char *str)
 	return label;
 }
 
-void setWidgets( const int &x, const int &y, const int &r )
+void ControlsPanel::setWidgets( const int &x, const int &y, const int &r )
 {
 
 	xSpinBox = spinBoxInit(-10000, 10000, x);
@@ -94,9 +94,9 @@ void setWidgets( const int &x, const int &y, const int &r )
 	connect(xSpinBox, SIGNAL(valueChanged(int)), this, SLOT(changeX(int)));
 	connect(xSpinBox, SIGNAL(valueChanged(int)), xSlider, SLOT(setValue(int)));
 
-	controls->addWidget(textFieldInit("Position X"), 0, 0);
-	controls->addWidget(xSpinBox, 0, 1);
-	controls->addWidget(xSlider, 1, 0);
+	controlsLayout->addWidget(textFieldInit("Position X"), 0, 0);
+	controlsLayout->addWidget(xSpinBox, 0, 1);
+	controlsLayout->addWidget(xSlider, 1, 0);
 
 
 	ySpinBox = spinBoxInit(-10000, 10000, y);
@@ -107,9 +107,9 @@ void setWidgets( const int &x, const int &y, const int &r )
 	connect(ySpinBox, SIGNAL(valueChanged(int)), this, SLOT(changeY(int)));
 	connect(ySpinBox, SIGNAL(valueChanged(int)), ySlider, SLOT(setValue(int)));
 
-	controls->addWidget(textFieldInit("Position Y"), 2, 0);
-	controls->addWidget(ySpinBox, 2, 1);
-	controls->addWidget(ySlider, 3, 0);
+	controlsLayout->addWidget(textFieldInit("Position Y"), 2, 0);
+	controlsLayout->addWidget(ySpinBox, 2, 1);
+	controlsLayout->addWidget(ySlider, 3, 0);
 
 
 	rSpinBox = spinBoxInit(0, 10000, r);
@@ -120,7 +120,7 @@ void setWidgets( const int &x, const int &y, const int &r )
 	connect(rSpinBox, SIGNAL(valueChanged(int)), this, SLOT(changeR(int)));
 	connect(rSpinBox, SIGNAL(valueChanged(int)), rSlider, SLOT(setValue(int)));
 
-	controls->addWidget(textFieldInit("R"), 4, 0);
-	controls->addWidget(rSpinBox, 4, 1);
-	controls->addWidget(rSlider, 5, 0);
+	controlsLayout->addWidget(textFieldInit("R"), 4, 0);
+	controlsLayout->addWidget(rSpinBox, 4, 1);
+	controlsLayout->addWidget(rSlider, 5, 0);
 }

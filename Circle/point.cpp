@@ -1,9 +1,9 @@
 #include "point.h"
 
-Point::Point( int x, int y )
+Point::Point( int x, int y ) : x( x ), y( y )
 {
-	this->x = x;
-	this->y = y;
+	x = 0;
+	y = 0;
 }
 
 Point::~Point()
@@ -11,12 +11,10 @@ Point::~Point()
 
 }
 
-void setX( int value )
+void Point::setX( int value ) : x( value )
 {
-	this->x = value;
 }
 
-void setY( int value )
+void Point::setY( int value ) : y( value )
 {
-	this->y = value;
 }

@@ -3,18 +3,20 @@
 
 #include <QWidget>
 #include <QPainter>
+#include <QImage>
+#include <QPaintEvent>
 
 #include "circle.h"
 
 class DrawPanel : public QWidget
 {
+	Q_OBJECT
 public:
-	DrawPanel( QWidget *parent = 0, Circle *circle );
+	explicit DrawPanel( QWidget *parent, Circle *circle );
 	~DrawPanel();
 protected:
 	void paintEvent( QPaintEvent *event );
 private:
-	QPainter *painter;
 	Circle *circle;
 };
 

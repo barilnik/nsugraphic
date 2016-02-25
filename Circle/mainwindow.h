@@ -4,8 +4,10 @@
 #include <QMainWindow>
 #include <QApplication>
 #include <QGridLayout>
+#include <QWidget>
 
 #include "controlspanel.h"
+#include "drawpanel.h"
 
 namespace Ui {
 class MainWindow;
@@ -26,6 +28,7 @@ private:
 	QAction *loadAction;
 	QGridLayout *mainLayout;
 	ControlsPanel *controlsPanel;
+	DrawPanel *drawPanel;
 };
 
 #endif // MAINWINDOW_H

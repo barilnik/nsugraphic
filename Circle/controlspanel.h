@@ -7,8 +7,10 @@
 #include <QSlider>
 #include <QLabel>
 
-class ControlsPanel
+class ControlsPanel : public QGroupBox
 {
+	Q_OBJECT
+
 public:
 	ControlsPanel( QWidget *parent = 0, const int &x = 0, const int &y = 0, const int &r = 50 );
 	~ControlsPanel();

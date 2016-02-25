@@ -1,6 +1,6 @@
 #include "panels.h"
 
-Panels::Panels()
+Panels::Panels( QWidget *parent ) : QWidget( parent )
 {
-
+	panelsLayout = QGridLayout( this );
 }
