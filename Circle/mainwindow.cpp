@@ -3,21 +3,37 @@
 #include <QTextEdit>
 
 MainWindow::MainWindow( QWidget *parent ) :
-	QMainWindow( parent ), ui(new Ui::MainWindow)
+	QMainWindow( parent )
 {
+	saveAction = new QAction( tr( "&Save" ), this );
+	loadAction = new QAction( tr( "&Load" ), this );
+
+	connect( saveAction, SIGNAL( trigged()), this, SLOT( save() ) );
+	connect( loadAction, SIGNAL( trigged() ), this, SLOT( load() ) );
+
+
 	QMenu *customMenu = new QMenu( this );
 	customMenu = menuBar()->addMenu(tr("&File"));
-	customMenu->addAction( tr( "&Save" ) );
-	customMenu->addAction( tr( "&Load" ) );
+	customMenu->addAction( saveAction );
+	customMenu->addAction( loadAction );
 	menuBar()->addMenu( customMenu );
 
 	QTextEdit *edit = new QTextEdit( this);
 	setCentralWidget( edit );
-   // ui->setupUi(this);
 }
 
 MainWindow::~MainWindow()
 {
 
+}
+
+void MainWindow::save()
+{
+	//Save File
+}
+
+void MainWindow::load()
+{
+	//Load File
 }
 
