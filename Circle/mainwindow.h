@@ -5,6 +5,8 @@
 #include <QApplication>
 #include <QGridLayout>
 
+#include "controlspanel.h"
+
 namespace Ui {
 class MainWindow;
 }
@@ -22,6 +24,8 @@ private slots:
 private:
 	QAction *saveAction;
 	QAction *loadAction;
+	QGridLayout *mainLayout;
+	ControlsPanel *controlsPanel;
 };
 
 #endif // MAINWINDOW_H
