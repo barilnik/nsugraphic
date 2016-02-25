@@ -69,12 +69,15 @@ void draw( QImage *pBackBuffer )
 
 void setX( int x ) : value( x )
 {
+	emit valueChanged( x );
 }
 
 void setY( int y ) : value( y )
 {
+	emit valueChanged( y );
 }
 
 void setR( int r ) : value( r )
 {
+	emit valueChanged( r );
 }

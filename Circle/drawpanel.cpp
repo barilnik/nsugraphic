@@ -1,8 +1,8 @@
 #include "drawpanel.h"
 
-DrawPanel::DrawPanel( QWidget *parent ) : QWidget( parent )
+DrawPanel::DrawPanel( QWidget *parent, Circle *circle ) : QWidget( parent )
 {
-	//painter = new Painter( this );
+	m_pCircle = circle;
 }
 
 DrawPanel::~DrawPanel()
@@ -12,7 +12,8 @@ DrawPanel::~DrawPanel()
 
 void paintEvent( QPaintEvent *event )
 {
-	painter = new Painter( this );
+	painter = new QPainter( this );
+
 	QImage backBuffer( width(), height(), QImage::Format_RGB888 );
 
 	uchar* pubBuffer = backBuffer.bits();
@@ -22,10 +23,10 @@ void paintEvent( QPaintEvent *event )
 	}
 	memset( pubBuffer, 0, backBuffer.byteCount() );
 
-	if( m_pRectangle )
+	if( m_pCircle )
 	{
-		m_pRectangle->Draw( &backBuffer );
+		m_pCircle->Draw( &backBuffer );
 	}
 
-	painter.drawImage( 0,0, backBuffer );
+	painter.drawImage( 0, 0, backBuffer );
 }
