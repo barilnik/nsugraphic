@@ -7,6 +7,7 @@
 #include <QSlider>
 #include <QGridLayout>
 #include <QGroupBox>
+#include <QSpinBox>
 
 class ContrlosPanel : public QWidget
 {
@@ -26,6 +27,7 @@ private:
     QSlider *rSlider;
     QGridLayout *controlsLayout;
     QGroupBox *controlBox;
+    QSpinBox *spinBox;
 };
 
 #endif // CONTRLOSPANEL_H

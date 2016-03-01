@@ -16,7 +16,7 @@ MainWindow::MainWindow( QWidget *parent ) : QMainWindow( parent )
 
     controlsPanelLayout->addWidget( controlsPanel );
     controlsPanelBoxLayout->setLayout( controlsPanelLayout );
-    mainLayout->addWidget( controlsPanelBoxLayout );
+    mainLayout->addWidget( controlsPanelBoxLayout, 0, 1 );
 
     setLayout( mainLayout );
 }
