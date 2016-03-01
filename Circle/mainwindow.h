@@ -6,8 +6,7 @@
 #include <QGridLayout>
 #include <QWidget>
 
-#include "controlspanel.h"
-#include "drawpanel.h"
+#include "menu.h"
 
 namespace Ui {
 class MainWindow;
@@ -24,11 +23,8 @@ private slots:
 	void save();
 	void load();
 private:
-	QAction *saveAction;
-	QAction *loadAction;
 	QGridLayout *mainLayout;
-	ControlsPanel *controlsPanel;
-	DrawPanel *drawPanel;
+    Menu *menu;
 };
 
 #endif // MAINWINDOW_H

@@ -14,15 +14,9 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    menu.cpp \
-    drawpanel.cpp \
-    controlspanel.cpp \
-    circle.cpp
+    menu.cpp
 
 HEADERS  += mainwindow.h \
-    menu.h \
-    drawpanel.h \
-    controlspanel.h \
-    circle.h
+    menu.h
 
 FORMS    += mainwindow.ui

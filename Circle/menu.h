@@ -4,16 +4,18 @@
 #include <QMenu>
 #include <QMenuBar>
 #include <QWidget>
+#include <QAction>
 
 class Menu : public QWidget
 {
 	Q_OBJECT
 public:
 	explicit Menu( QWidget *parent = 0 );
+    void createActions();
 	~Menu();
-//	QMenu getMenu();
-//private:
-//	QMenu *customMenu;
+private:
+    QAction *saveAction;
+    QAction *loadAction;
 
 };
 
