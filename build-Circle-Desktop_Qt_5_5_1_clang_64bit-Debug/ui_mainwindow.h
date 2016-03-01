@@ -13,9 +13,6 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
-#include <QtWidgets/QGridLayout>
-#include <QtWidgets/QGroupBox>
-#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
@@ -29,12 +26,6 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralWidget;
-    QWidget *horizontalLayoutWidget;
-    QHBoxLayout *horizontalLayout;
-    QGroupBox *groupBox_2;
-    QGroupBox *groupBox;
-    QWidget *gridLayoutWidget;
-    QGridLayout *gridLayout_2;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -46,32 +37,6 @@ public:
         MainWindow->resize(549, 414);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        horizontalLayoutWidget = new QWidget(centralWidget);
-        horizontalLayoutWidget->setObjectName(QStringLiteral("horizontalLayoutWidget"));
-        horizontalLayoutWidget->setGeometry(QRect(10, 10, 531, 341));
-        horizontalLayout = new QHBoxLayout(horizontalLayoutWidget);
-        horizontalLayout->setSpacing(6);
-        horizontalLayout->setContentsMargins(11, 11, 11, 11);
-        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        groupBox_2 = new QGroupBox(horizontalLayoutWidget);
-        groupBox_2->setObjectName(QStringLiteral("groupBox_2"));
-
-        horizontalLayout->addWidget(groupBox_2);
-
-        groupBox = new QGroupBox(horizontalLayoutWidget);
-        groupBox->setObjectName(QStringLiteral("groupBox"));
-        gridLayoutWidget = new QWidget(groupBox);
-        gridLayoutWidget->setObjectName(QStringLiteral("gridLayoutWidget"));
-        gridLayoutWidget->setGeometry(QRect(0, 20, 251, 321));
-        gridLayout_2 = new QGridLayout(gridLayoutWidget);
-        gridLayout_2->setSpacing(6);
-        gridLayout_2->setContentsMargins(11, 11, 11, 11);
-        gridLayout_2->setObjectName(QStringLiteral("gridLayout_2"));
-        gridLayout_2->setContentsMargins(0, 0, 0, 0);
-
-        horizontalLayout->addWidget(groupBox);
-
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -92,8 +57,6 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
-        groupBox_2->setTitle(QApplication::translate("MainWindow", "Draw Panel", 0));
-        groupBox->setTitle(QApplication::translate("MainWindow", "Contrlos", 0));
     } // retranslateUi
 
 };

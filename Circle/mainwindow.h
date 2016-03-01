@@ -4,9 +4,12 @@
 #include <QMainWindow>
 #include <QApplication>
 #include <QGridLayout>
+#include <QGroupBox>
 #include <QWidget>
 
 #include "menu.h"
+#include "contrlospanel.h"
+//#include "board.h"
 
 namespace Ui {
 class MainWindow;
@@ -24,7 +27,11 @@ private slots:
 	void load();
 private:
 	QGridLayout *mainLayout;
+    QGroupBox *controlsPanelBoxLayout;
+    QGridLayout *controlsPanelLayout;
     Menu *menu;
+    ContrlosPanel *controlsPanel;
+    //Board *board;
 };
 
 #endif // MAINWINDOW_H
