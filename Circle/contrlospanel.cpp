@@ -7,7 +7,7 @@ ContrlosPanel::ContrlosPanel( QWidget *parent ) : QWidget( parent )
 
     positionXLabel = new Label( "Position X:" , widget );
     //positionXLabel->getLabel()->setText( );
-    controlsLayout->addWidget( positionXLabel, 1, 1 );
+    controlsLayout->addWidget( positionXLabel->label, 1, 1 );
 
     positionXSpinBox = new SpinBox( widget );
     controlsLayout->addWidget( positionXSpinBox->spinBox, 1, 2 );

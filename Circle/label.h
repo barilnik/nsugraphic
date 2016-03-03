@@ -12,7 +12,10 @@ class Label : public QWidget
     Q_OBJECT
 public:
     Label( QString labelText, QWidget *parent = 0 );
-    QLabel getLabel();
+    QLabel *getLabel()
+    {
+        return label;
+    }
 
     QLabel *label;
 };

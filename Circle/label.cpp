@@ -11,3 +11,7 @@ Label::Label( QString labelText, QWidget *parent ) : QWidget( parent )
 }
 
 
+QLabel *getLabel()
+{
+    return label;
+}
