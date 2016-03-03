@@ -9,6 +9,9 @@
 #include <QGroupBox>
 #include <QSpinBox>
 
+#include "resource.h"
+#include "label.h"
+
 class ContrlosPanel : public QWidget
 {
     Q_OBJECT
@@ -16,7 +19,7 @@ public:
     explicit ContrlosPanel( QWidget *parent = 0 );
     ~ContrlosPanel();
 private:
-    QLabel *positionXLabel;
+    //QLabel *positionXLabel;
     QLabel *positionYLabel;
     QLabel *rLabel;
     QSpinBox *positionXSpinBox;
@@ -28,6 +31,7 @@ private:
     QGridLayout *controlsLayout;
     QGroupBox *controlBox;
     QSpinBox *spinBox;
+    Label *positionXLabel;
 };
 
 #endif // CONTRLOSPANEL_H

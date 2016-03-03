@@ -52,19 +52,31 @@ SOURCES       = ../Circle/main.cpp \
 		../Circle/mainwindow.cpp \
 		../Circle/menu.cpp \
 		../Circle/contrlospanel.cpp \
-		../Circle/board.cpp moc_mainwindow.cpp \
+		../Circle/board.cpp \
+		../Circle/label.cpp \
+		../Circle/slider.cpp \
+		../Circle/spinbox.cpp moc_mainwindow.cpp \
 		moc_menu.cpp \
 		moc_contrlospanel.cpp \
-		moc_board.cpp
+		moc_board.cpp \
+		moc_label.cpp \
+		moc_slider.cpp \
+		moc_spinbox.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
 		menu.o \
 		contrlospanel.o \
 		board.o \
+		label.o \
+		slider.o \
+		spinbox.o \
 		moc_mainwindow.o \
 		moc_menu.o \
 		moc_contrlospanel.o \
-		moc_board.o
+		moc_board.o \
+		moc_label.o \
+		moc_slider.o \
+		moc_spinbox.o
 DIST          = ../../Qt/5.5/clang_64/mkspecs/features/spec_pre.prf \
 		../../Qt/5.5/clang_64/mkspecs/qdevice.pri \
 		../../Qt/5.5/clang_64/mkspecs/features/device_config.prf \
@@ -211,11 +223,18 @@ DIST          = ../../Qt/5.5/clang_64/mkspecs/features/spec_pre.prf \
 		../Circle/Circle.pro ../Circle/mainwindow.h \
 		../Circle/menu.h \
 		../Circle/contrlospanel.h \
-		../Circle/board.h ../Circle/main.cpp \
+		../Circle/board.h \
+		../Circle/label.h \
+		../Circle/resource.h \
+		../Circle/slider.h \
+		../Circle/spinbox.h ../Circle/main.cpp \
 		../Circle/mainwindow.cpp \
 		../Circle/menu.cpp \
 		../Circle/contrlospanel.cpp \
-		../Circle/board.cpp
+		../Circle/board.cpp \
+		../Circle/label.cpp \
+		../Circle/slider.cpp \
+		../Circle/spinbox.cpp
 QMAKE_TARGET  = Circle
 DESTDIR       = #avoid trailing-slash linebreak
 TARGET        = Circle.app/Contents/MacOS/Circle
@@ -581,8 +600,8 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents ../Circle/mainwindow.h ../Circle/menu.h ../Circle/contrlospanel.h ../Circle/board.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../Circle/main.cpp ../Circle/mainwindow.cpp ../Circle/menu.cpp ../Circle/contrlospanel.cpp ../Circle/board.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../Circle/mainwindow.h ../Circle/menu.h ../Circle/contrlospanel.h ../Circle/board.h ../Circle/label.h ../Circle/resource.h ../Circle/slider.h ../Circle/spinbox.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../Circle/main.cpp ../Circle/mainwindow.cpp ../Circle/menu.cpp ../Circle/contrlospanel.cpp ../Circle/board.cpp ../Circle/label.cpp ../Circle/slider.cpp ../Circle/spinbox.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../Circle/mainwindow.ui $(DISTDIR)/
 
 
@@ -609,15 +628,17 @@ compiler_objective_c_make_all:
 compiler_objective_c_clean:
 compiler_rcc_make_all:
 compiler_rcc_clean:
-compiler_moc_header_make_all: moc_mainwindow.cpp moc_menu.cpp moc_contrlospanel.cpp moc_board.cpp
+compiler_moc_header_make_all: moc_mainwindow.cpp moc_menu.cpp moc_contrlospanel.cpp moc_board.cpp moc_label.cpp moc_slider.cpp moc_spinbox.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_mainwindow.cpp moc_menu.cpp moc_contrlospanel.cpp moc_board.cpp
+	-$(DEL_FILE) moc_mainwindow.cpp moc_menu.cpp moc_contrlospanel.cpp moc_board.cpp moc_label.cpp moc_slider.cpp moc_spinbox.cpp
 moc_mainwindow.cpp: ../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QMainWindow \
 		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qmainwindow.h \
 		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QApplication \
 		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
 		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QGridLayout \
 		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qgridlayout.h \
+		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QGroupBox \
+		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qgroupbox.h \
 		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QWidget \
 		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
 		../Circle/menu.h \
@@ -634,8 +655,8 @@ moc_mainwindow.cpp: ../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QMainW
 		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qspinbox.h \
 		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QSlider \
 		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qslider.h \
-		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QGroupBox \
-		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qgroupbox.h \
+		../Circle/resource.h \
+		../Circle/label.h \
 		../Circle/mainwindow.h
 	/Users/kristina/Qt/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/kristina/Qt/5.5/clang_64/mkspecs/macx-clang -I/Users/kristina/nsugraphic/Circle -I/Users/kristina/Qt/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/kristina/Qt/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/kristina/Qt/5.5/clang_64/lib/QtCore.framework/Headers -I. -F/Users/kristina/Qt/5.5/clang_64/lib ../Circle/mainwindow.h -o moc_mainwindow.cpp
 
@@ -662,6 +683,8 @@ moc_contrlospanel.cpp: ../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QWi
 		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qgridlayout.h \
 		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QGroupBox \
 		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qgroupbox.h \
+		../Circle/resource.h \
+		../Circle/label.h \
 		../Circle/contrlospanel.h
 	/Users/kristina/Qt/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/kristina/Qt/5.5/clang_64/mkspecs/macx-clang -I/Users/kristina/nsugraphic/Circle -I/Users/kristina/Qt/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/kristina/Qt/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/kristina/Qt/5.5/clang_64/lib/QtCore.framework/Headers -I. -F/Users/kristina/Qt/5.5/clang_64/lib ../Circle/contrlospanel.h -o moc_contrlospanel.cpp
 
@@ -680,8 +703,34 @@ moc_board.cpp: ../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QWidget \
 		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qslider.h \
 		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QGridLayout \
 		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qgridlayout.h \
+		../Circle/resource.h \
+		../Circle/label.h \
 		../Circle/board.h
 	/Users/kristina/Qt/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/kristina/Qt/5.5/clang_64/mkspecs/macx-clang -I/Users/kristina/nsugraphic/Circle -I/Users/kristina/Qt/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/kristina/Qt/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/kristina/Qt/5.5/clang_64/lib/QtCore.framework/Headers -I. -F/Users/kristina/Qt/5.5/clang_64/lib ../Circle/board.h -o moc_board.cpp
+
+moc_label.cpp: ../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QWidget \
+		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
+		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QLabel \
+		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qlabel.h \
+		../Circle/resource.h \
+		../Circle/label.h
+	/Users/kristina/Qt/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/kristina/Qt/5.5/clang_64/mkspecs/macx-clang -I/Users/kristina/nsugraphic/Circle -I/Users/kristina/Qt/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/kristina/Qt/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/kristina/Qt/5.5/clang_64/lib/QtCore.framework/Headers -I. -F/Users/kristina/Qt/5.5/clang_64/lib ../Circle/label.h -o moc_label.cpp
+
+moc_slider.cpp: ../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QWidget \
+		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
+		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QSlider \
+		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qslider.h \
+		../Circle/resource.h \
+		../Circle/slider.h
+	/Users/kristina/Qt/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/kristina/Qt/5.5/clang_64/mkspecs/macx-clang -I/Users/kristina/nsugraphic/Circle -I/Users/kristina/Qt/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/kristina/Qt/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/kristina/Qt/5.5/clang_64/lib/QtCore.framework/Headers -I. -F/Users/kristina/Qt/5.5/clang_64/lib ../Circle/slider.h -o moc_slider.cpp
+
+moc_spinbox.cpp: ../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QWidget \
+		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
+		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QSpinBox \
+		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qspinbox.h \
+		../Circle/resource.h \
+		../Circle/spinbox.h
+	/Users/kristina/Qt/5.5/clang_64/bin/moc $(DEFINES) -D__APPLE__ -D__GNUC__=4 -D__APPLE_CC__ -I/Users/kristina/Qt/5.5/clang_64/mkspecs/macx-clang -I/Users/kristina/nsugraphic/Circle -I/Users/kristina/Qt/5.5/clang_64/lib/QtWidgets.framework/Headers -I/Users/kristina/Qt/5.5/clang_64/lib/QtGui.framework/Headers -I/Users/kristina/Qt/5.5/clang_64/lib/QtCore.framework/Headers -I. -F/Users/kristina/Qt/5.5/clang_64/lib ../Circle/spinbox.h -o moc_spinbox.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -710,6 +759,8 @@ main.o: ../Circle/main.cpp ../Circle/mainwindow.h \
 		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
 		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QGridLayout \
 		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qgridlayout.h \
+		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QGroupBox \
+		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qgroupbox.h \
 		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QWidget \
 		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
 		../Circle/menu.h \
@@ -726,8 +777,8 @@ main.o: ../Circle/main.cpp ../Circle/mainwindow.h \
 		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qspinbox.h \
 		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QSlider \
 		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qslider.h \
-		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QGroupBox \
-		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qgroupbox.h
+		../Circle/resource.h \
+		../Circle/label.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../Circle/main.cpp
 
 mainwindow.o: ../Circle/mainwindow.cpp ../Circle/mainwindow.h \
@@ -737,6 +788,8 @@ mainwindow.o: ../Circle/mainwindow.cpp ../Circle/mainwindow.h \
 		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qapplication.h \
 		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QGridLayout \
 		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qgridlayout.h \
+		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QGroupBox \
+		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qgroupbox.h \
 		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QWidget \
 		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
 		../Circle/menu.h \
@@ -753,9 +806,11 @@ mainwindow.o: ../Circle/mainwindow.cpp ../Circle/mainwindow.h \
 		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qspinbox.h \
 		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QSlider \
 		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qslider.h \
-		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QGroupBox \
-		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qgroupbox.h \
+		../Circle/resource.h \
+		../Circle/label.h \
 		ui_mainwindow.h \
+		../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/QTextStream \
+		../../Qt/5.5/clang_64/lib/QtCore.framework/Headers/qtextstream.h \
 		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QPushButton \
 		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qpushbutton.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../Circle/mainwindow.cpp
@@ -783,7 +838,9 @@ contrlospanel.o: ../Circle/contrlospanel.cpp ../Circle/contrlospanel.h \
 		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QGridLayout \
 		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qgridlayout.h \
 		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QGroupBox \
-		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qgroupbox.h
+		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qgroupbox.h \
+		../Circle/resource.h \
+		../Circle/label.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o contrlospanel.o ../Circle/contrlospanel.cpp
 
 board.o: ../Circle/board.cpp ../Circle/board.h \
@@ -801,8 +858,34 @@ board.o: ../Circle/board.cpp ../Circle/board.h \
 		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QSlider \
 		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qslider.h \
 		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QGridLayout \
-		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qgridlayout.h
+		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qgridlayout.h \
+		../Circle/resource.h \
+		../Circle/label.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o board.o ../Circle/board.cpp
+
+label.o: ../Circle/label.cpp ../Circle/label.h \
+		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QWidget \
+		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
+		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QLabel \
+		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qlabel.h \
+		../Circle/resource.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o label.o ../Circle/label.cpp
+
+slider.o: ../Circle/slider.cpp ../Circle/slider.h \
+		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QWidget \
+		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
+		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QSlider \
+		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qslider.h \
+		../Circle/resource.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o slider.o ../Circle/slider.cpp
+
+spinbox.o: ../Circle/spinbox.cpp ../Circle/spinbox.h \
+		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QWidget \
+		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qwidget.h \
+		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/QSpinBox \
+		../../Qt/5.5/clang_64/lib/QtWidgets.framework/Headers/qspinbox.h \
+		../Circle/resource.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o spinbox.o ../Circle/spinbox.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp
@@ -815,6 +898,15 @@ moc_contrlospanel.o: moc_contrlospanel.cpp
 
 moc_board.o: moc_board.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_board.o moc_board.cpp
+
+moc_label.o: moc_label.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_label.o moc_label.cpp
+
+moc_slider.o: moc_slider.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_slider.o moc_slider.cpp
+
+moc_spinbox.o: moc_spinbox.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_spinbox.o moc_spinbox.cpp
 
 ####### Install
 
