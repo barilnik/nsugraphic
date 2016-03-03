@@ -11,9 +11,8 @@ class SpinBox : public QWidget
     Q_OBJECT
 public:
     SpinBox( QWidget *parent = 0);
-    QSpinBox *getSpinBox();
-private:
-    QSpinBox *spinBox;
+    QSpinBox getSpinBox();
+    QSpinBox spinBox;
 };
 
 #endif // SPINBOX_H

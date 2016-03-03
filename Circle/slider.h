@@ -11,9 +11,8 @@ class Slider : public QWidget
     Q_OBJECT
 public:
     Slider( QWidget *parent = 0 );
-    QSlider *getSlider();
-private:
-    QSlider *slider;
+    QSlider getSlider();
+    QSlider slider;
 };
 
 #endif // SLIDER_H

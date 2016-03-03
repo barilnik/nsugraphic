@@ -11,6 +11,8 @@
 
 #include "resource.h"
 #include "label.h"
+#include "spinbox.h"
+#include "slider.h"
 
 class ContrlosPanel : public QWidget
 {
@@ -20,18 +22,18 @@ public:
     ~ContrlosPanel();
 private:
     //QLabel *positionXLabel;
-    QLabel *positionYLabel;
-    QLabel *rLabel;
-    QSpinBox *positionXSpinBox;
-    QSpinBox *positionYSpinBox;
-    QSpinBox *rSpinBox;
-    QSlider *positionXSlider;
-    QSlider *positionYSlider;
-    QSlider *rSlider;
+    Label *positionXLabel;
+    Label *positionYLabel;
+    Label *rLabel;
+    SpinBox *positionXSpinBox;
+    SpinBox *positionYSpinBox;
+    SpinBox *rSpinBox;
+    Slider *positionXSlider;
+    Slider *positionYSlider;
+    Slider *rSlider;
     QGridLayout *controlsLayout;
     QGroupBox *controlBox;
-    QSpinBox *spinBox;
-    Label *positionXLabel;
+
 };
 
 #endif // CONTRLOSPANEL_H

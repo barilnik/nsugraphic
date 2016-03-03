@@ -7,7 +7,7 @@ Slider::Slider( QWidget *parent ) : QWidget( parent )
     slider->setGeometry( 0, 2 * SLIDER_HEIGHT, SLIDER_WIDTH,  SLIDER_HEIGHT );
 }
 
-QSlider *getSlider()
+QSlider getSlider()
 {
     return slider;
 }

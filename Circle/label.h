@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include <QLabel>
+#include <QString>
 
 #include "resource.h"
 
@@ -10,9 +11,9 @@ class Label : public QWidget
 {
     Q_OBJECT
 public:
-    Label( QWidget *parent = 0 );
-    QLabel *getLabel();
-private:
+    Label( QString labelText, QWidget *parent = 0 );
+    QLabel getLabel();
+
     QLabel *label;
 };
 

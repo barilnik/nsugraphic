@@ -11,7 +11,7 @@ SpinBox::SpinBox( QWidget *parent ) : QWidget( parent )
     spinBox->setValue( DEFAULT_VALUE );
 }
 
-QSpinBox *getSpinbox()
+QSpinBox getSpinbox()
 {
     return spinBox;
 }

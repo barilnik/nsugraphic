@@ -16,5 +16,5 @@ Board::~Board()
 
 void Board::createPanels()
 {
- QWidget *widget = new QWidget();
+ //QWidget *widget = new QWidget();
 }
