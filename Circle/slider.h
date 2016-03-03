@@ -12,7 +12,7 @@ class Slider : public QWidget
 public:
     Slider( QWidget *parent = 0 );
     QSlider getSlider();
-    QSlider slider;
+    QSlider *slider;
 };
 
 #endif // SLIDER_H

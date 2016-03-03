@@ -12,7 +12,7 @@ class SpinBox : public QWidget
 public:
     SpinBox( QWidget *parent = 0);
     QSpinBox getSpinBox();
-    QSpinBox spinBox;
+    QSpinBox *spinBox;
 };
 
 #endif // SPINBOX_H

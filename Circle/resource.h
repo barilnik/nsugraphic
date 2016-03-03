@@ -27,4 +27,11 @@
 #define DEFAULT_HEIGHT 600
 #define DEFAULT_WIDTH 800
 
+#define DEFAULT_X 0
+#define DEFAULT_Y 0
+#define DEFAULT_RADIUS 20
+
+#define WHITE_COLOR 255
+#define BLACK_COLOR 0
+
 #endif // RESOURCE_H

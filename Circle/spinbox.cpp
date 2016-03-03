@@ -10,8 +10,3 @@ SpinBox::SpinBox( QWidget *parent ) : QWidget( parent )
     spinBox->setMinimum( MIN_COORD );
     spinBox->setValue( DEFAULT_VALUE );
 }
-
-QSpinBox getSpinbox()
-{
-    return spinBox;
-}

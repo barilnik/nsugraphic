@@ -16,18 +16,20 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     menu.cpp \
     contrlospanel.cpp \
-    board.cpp \
     label.cpp \
     slider.cpp \
-    spinbox.cpp
+    spinbox.cpp \
+    drawpanel.cpp \
+    circle.cpp
 
 HEADERS  += mainwindow.h \
     menu.h \
     contrlospanel.h \
-    board.h \
     label.h \
     resource.h \
     slider.h \
-    spinbox.h
+    spinbox.h \
+    drawpanel.h \
+    circle.h
 
 FORMS    += mainwindow.ui

@@ -9,7 +9,8 @@
 
 #include "menu.h"
 #include "contrlospanel.h"
-//#include "board.h"
+#include "drawpanel.h"
+#include "circle.h"
 
 namespace Ui {
 class MainWindow;
@@ -28,10 +29,13 @@ private slots:
 private:
 	QGridLayout *mainLayout;
     QGroupBox *controlsPanelBoxLayout;
+    QGroupBox *drawPanelBoxLayout;
     QGridLayout *controlsPanelLayout;
+    QGridLayout *drawPanelLayout;
     Menu *menu;
     ContrlosPanel *controlsPanel;
-    //Board *board;
+    DrawPanel *drawPanel;
+    Circle *circle;
 };
 
 #endif // MAINWINDOW_H

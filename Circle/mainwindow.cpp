@@ -7,16 +7,28 @@
 
 MainWindow::MainWindow( QWidget *parent ) : QMainWindow( parent )
 {
+    circle = new Circle();
+
     menu = new Menu( this );
     controlsPanel = new ContrlosPanel( this );
+    drawPanel = new DrawPanel( NULL, circle );
 
     mainLayout = new QGridLayout( this );
+
+    drawPanelLayout = new QGridLayout( this );
+    drawPanelBoxLayout = new QGroupBox( tr( "Draw Panel" ), this );
+
     controlsPanelLayout = new QGridLayout( this );
-    controlsPanelBoxLayout = new QGroupBox( tr("Controls"), this );
+    controlsPanelBoxLayout = new QGroupBox( tr( "Controls" ), this );
+
+    drawPanelLayout->addWidget( drawPanel );
+    drawPanelBoxLayout->setLayout( drawPanelLayout );
 
     controlsPanelLayout->addWidget( controlsPanel );
     controlsPanelBoxLayout->setLayout( controlsPanelLayout );
-    mainLayout->addWidget( controlsPanelBoxLayout, 0, 1 );
+
+    mainLayout->addWidget( drawPanelBoxLayout, 1, 1 );
+    mainLayout->addWidget( controlsPanelBoxLayout, 1, 2 );
 
     setLayout( mainLayout );
 }
