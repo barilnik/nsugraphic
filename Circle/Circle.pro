@@ -16,11 +16,14 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     menu.cpp \
     contrlospanel.cpp \
-    board.cpp
+    board.cpp \
+    label.cpp
 
 HEADERS  += mainwindow.h \
     menu.h \
     contrlospanel.h \
-    board.h
+    board.h \
+    label.h \
+    resource.h
 
 FORMS    += mainwindow.ui
