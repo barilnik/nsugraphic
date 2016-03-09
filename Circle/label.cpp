@@ -2,7 +2,7 @@
 
 Label::Label( QString labelText, QWidget *parent ) : QWidget( parent )
 {
-    label = new QLabel( this );
+    label = new QLabel( labelText, this );
 
     label->setAlignment( Qt::AlignCenter );
     label->setFixedSize( LABEL_WIDTH, LABEL_HEIGHT );
@@ -10,8 +10,9 @@ Label::Label( QString labelText, QWidget *parent ) : QWidget( parent )
     label->setText( labelText );
 }
 
-
+/*
 QLabel *getLabel()
 {
     return label;
 }
+*/

@@ -20,7 +20,8 @@ SOURCES += main.cpp\
     slider.cpp \
     spinbox.cpp \
     drawpanel.cpp \
-    circle.cpp
+    circle.cpp \
+    contrloswidgets.cpp
 
 HEADERS  += mainwindow.h \
     menu.h \
@@ -30,6 +31,7 @@ HEADERS  += mainwindow.h \
     slider.h \
     spinbox.h \
     drawpanel.h \
-    circle.h
+    circle.h \
+    contrloswidgets.h
 
 FORMS    += mainwindow.ui

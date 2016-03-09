@@ -2,6 +2,8 @@
 
 ContrlosPanel::ContrlosPanel( QWidget *parent ) : QWidget( parent )
 {
+    
+    
     /* TODO: умереть, но доделать это решение!
     //QWidget *widget = new QWidget( this );
     setFixedSize( CONTRLOS_PANEL_WIDTH, CONTRLOS_PANEL_HEIGHT );
