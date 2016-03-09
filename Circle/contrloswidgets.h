@@ -6,6 +6,7 @@
 #include <QLabel>
 #include <QSpinBox>
 #include <QSlider>
+#include <QGridLayout>
 
 #include "resource.h"
 
@@ -21,6 +22,7 @@ private:
     QLabel *label;
     QSpinBox *spinBox;
     QSlider *slider;
+    QGridLayout *layout;
 
 Q_SIGNALS:
     void valueChanged( int value );

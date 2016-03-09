@@ -7,7 +7,7 @@ DrawPanel::DrawPanel( QWidget *parent, Circle *circle ) : QWidget( parent )
 
 void DrawPanel::paintEvent( QPaintEvent* /*event*/ )
 {
-    QPainter painter( this) ;
+    QPainter painter( this ) ;
 
     QImage backBuffer( width(), height(), QImage::Format_RGB888 );
 

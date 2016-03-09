@@ -18,6 +18,12 @@ ContrlosWidgets::ContrlosWidgets( QWidget *parent ) : QWidget( parent )
     slider->setFixedSize( SLIDER_SIZE_WIDTH, SLIDER_SIZE_HEIGHT );
     slider->setGeometry( 0, 2 * SLIDER_HEIGHT, SLIDER_WIDTH,  SLIDER_HEIGHT );
 
+    layout = new QGridLayout( this );
+    layout->addWidget( label, 0, 1 );
+    layout->addWidget( spinBox, 1, 1 );
+    layout->addWidget( slider, 2, 1 );
+    setLayout( layout );
+
     connect(slider,  SIGNAL(valueChanged(int)), spinBox, SLOT(setValue(int)));
     connect(spinBox, SIGNAL(valueChanged(int)), slider,  SLOT(setValue(int)));
     connect(slider,  SIGNAL(valueChanged(int)), this,    SIGNAL(valueChanged(int)));

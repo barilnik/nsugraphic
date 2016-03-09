@@ -8,7 +8,8 @@
 #include <QWidget>
 
 #include "menu.h"
-#include "contrlospanel.h"
+//#include "contrlospanel.h"
+#include "contrloswidgets.h"
 #include "drawpanel.h"
 #include "circle.h"
 
@@ -21,7 +22,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    MainWindow( QWidget *parent = 0 );
+    explicit MainWindow( QWidget *parent = 0 );
     ~MainWindow();
 private slots:
 	void save();
@@ -32,8 +33,14 @@ private:
     QGroupBox *drawPanelBoxLayout;
     QGridLayout *controlsPanelLayout;
     QGridLayout *drawPanelLayout;
+
     Menu *menu;
-    ContrlosPanel *controlsPanel;
+
+    //ContrlosPanel *controlsPanel;
+    ContrlosWidgets *widgetForX;
+    ContrlosWidgets *widgetForY;
+    ContrlosWidgets *widgetForR;
+
     DrawPanel *drawPanel;
     Circle *circle;
 };
