@@ -6,6 +6,7 @@
 #include <QSpinBox>
 #include <QSlider>
 #include <QLabel>
+#include <QObject>
 
 class ControlsPanel : public QGroupBox
 {
@@ -16,13 +17,13 @@ public:
 	~ControlsPanel();
 	QMap< QString, QString >* getData();
 signals:
-	void rChanged( const int& );
-	void xChanged( const int& );
-	void yChanged( const int& );
+	void rChanged( const int &r );
+	void xChanged( const int &x );
+	void yChanged( const int &y );
 public slots:
-	void changeR( const int& );
-	void changeX( const int& );
-	void changeY( const int& );
+	void changeR( const int &r );
+	void changeX( const int &x );
+	void changeY( const int &y );
 	void changeData( QMap< QString, QString > );
 protected:
 	void setWidgets( const int &x, const int &y, const int &r );

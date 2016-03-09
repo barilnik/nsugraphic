@@ -19,8 +19,8 @@
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_ControlsPanel_t {
-    QByteArrayData data[10];
-    char stringdata0[99];
+    QByteArrayData data[13];
+    char stringdata0[105];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,17 +32,20 @@ static const qt_meta_stringdata_ControlsPanel_t qt_meta_stringdata_ControlsPanel
 QT_MOC_LITERAL(0, 0, 13), // "ControlsPanel"
 QT_MOC_LITERAL(1, 14, 8), // "rChanged"
 QT_MOC_LITERAL(2, 23, 0), // ""
-QT_MOC_LITERAL(3, 24, 8), // "xChanged"
-QT_MOC_LITERAL(4, 33, 8), // "yChanged"
-QT_MOC_LITERAL(5, 42, 7), // "changeR"
-QT_MOC_LITERAL(6, 50, 7), // "changeX"
-QT_MOC_LITERAL(7, 58, 7), // "changeY"
-QT_MOC_LITERAL(8, 66, 10), // "changeData"
-QT_MOC_LITERAL(9, 77, 21) // "QMap<QString,QString>"
+QT_MOC_LITERAL(3, 24, 1), // "r"
+QT_MOC_LITERAL(4, 26, 8), // "xChanged"
+QT_MOC_LITERAL(5, 35, 1), // "x"
+QT_MOC_LITERAL(6, 37, 8), // "yChanged"
+QT_MOC_LITERAL(7, 46, 1), // "y"
+QT_MOC_LITERAL(8, 48, 7), // "changeR"
+QT_MOC_LITERAL(9, 56, 7), // "changeX"
+QT_MOC_LITERAL(10, 64, 7), // "changeY"
+QT_MOC_LITERAL(11, 72, 10), // "changeData"
+QT_MOC_LITERAL(12, 83, 21) // "QMap<QString,QString>"
 
     },
-    "ControlsPanel\0rChanged\0\0xChanged\0"
-    "yChanged\0changeR\0changeX\0changeY\0"
+    "ControlsPanel\0rChanged\0\0r\0xChanged\0x\0"
+    "yChanged\0y\0changeR\0changeX\0changeY\0"
     "changeData\0QMap<QString,QString>"
 };
 #undef QT_MOC_LITERAL
@@ -62,25 +65,25 @@ static const uint qt_meta_data_ControlsPanel[] = {
 
  // signals: name, argc, parameters, tag, flags
        1,    1,   49,    2, 0x06 /* Public */,
-       3,    1,   52,    2, 0x06 /* Public */,
-       4,    1,   55,    2, 0x06 /* Public */,
+       4,    1,   52,    2, 0x06 /* Public */,
+       6,    1,   55,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       5,    1,   58,    2, 0x0a /* Public */,
-       6,    1,   61,    2, 0x0a /* Public */,
-       7,    1,   64,    2, 0x0a /* Public */,
-       8,    1,   67,    2, 0x0a /* Public */,
+       8,    1,   58,    2, 0x0a /* Public */,
+       9,    1,   61,    2, 0x0a /* Public */,
+      10,    1,   64,    2, 0x0a /* Public */,
+      11,    1,   67,    2, 0x0a /* Public */,
 
  // signals: parameters
-    QMetaType::Void, QMetaType::Int,    2,
-    QMetaType::Void, QMetaType::Int,    2,
-    QMetaType::Void, QMetaType::Int,    2,
+    QMetaType::Void, QMetaType::Int,    3,
+    QMetaType::Void, QMetaType::Int,    5,
+    QMetaType::Void, QMetaType::Int,    7,
 
  // slots: parameters
-    QMetaType::Void, QMetaType::Int,    2,
-    QMetaType::Void, QMetaType::Int,    2,
-    QMetaType::Void, QMetaType::Int,    2,
-    QMetaType::Void, 0x80000000 | 9,    2,
+    QMetaType::Void, QMetaType::Int,    3,
+    QMetaType::Void, QMetaType::Int,    5,
+    QMetaType::Void, QMetaType::Int,    7,
+    QMetaType::Void, 0x80000000 | 12,    2,
 
        0        // eod
 };

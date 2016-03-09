@@ -17,19 +17,19 @@ ControlsPanel::~ControlsPanel()
 
 }
 
-void changeX( const int &x )
+void changeX( const int x )
 {
-	emit xChanged( x );
+	emit xChanged( &x );
 }
 
-void changeY( const int &y )
+void changeY( const int y )
 {
-	emit yChanged( y );
+	emit yChanged( &y );
 }
 
-void changeR( const int &r )
+void changeR( const int r )
 {
-	emit rChanged(r);
+	emit rChanged( &r );
 }
 
 QMap< QString, QString >* ControlsPanel::getData()
