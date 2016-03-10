@@ -8,8 +8,8 @@
 #include <QWidget>
 
 #include "menu.h"
-//#include "contrlospanel.h"
-#include "contrloswidgets.h"
+#include "contrlospanel.h"
+//#include "contrloswidgets.h"
 #include "drawpanel.h"
 #include "circle.h"
 
@@ -36,7 +36,7 @@ private:
 
     Menu *menu;
 
-    //ContrlosPanel *controlsPanel;
+   // ContrlosPanel *controlsPanel;
     ContrlosWidgets *widgetForX;
     ContrlosWidgets *widgetForY;
     ContrlosWidgets *widgetForR;

@@ -11,19 +11,23 @@
 
 #include "resource.h"
 #include "contrloswidgets.h"
+#include "circle.h"
 
 class ContrlosPanel : public QWidget
 {
     Q_OBJECT
 public:
-    explicit ContrlosPanel( QWidget *parent = 0 );
+    explicit ContrlosPanel( QWidget *parent, Circle *circle );
     ~ContrlosPanel();
 private:
     QGridLayout *controlsLayout;
     QGroupBox *controlBox;
+
     ContrlosWidgets *widgetForX;
     ContrlosWidgets *widgetForY;
     ContrlosWidgets *widgetForR;
+
+    Circle *circle;
 };
 
 /*

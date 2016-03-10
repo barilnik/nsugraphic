@@ -7,6 +7,7 @@
 #include <QSpinBox>
 #include <QSlider>
 #include <QGridLayout>
+#include <QGroupBox>
 
 #include "resource.h"
 
@@ -23,6 +24,7 @@ private:
     QSpinBox *spinBox;
     QSlider *slider;
     QGridLayout *layout;
+    QGroupBox *boxLayout;
 
 Q_SIGNALS:
     void valueChanged( int value );

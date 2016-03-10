@@ -1,16 +1,24 @@
 #include "contrlospanel.h"
 
-ContrlosPanel::ContrlosPanel( QWidget *parent ) : QWidget( parent ),
-    widgetForX( new ContrlosWidgets( this ) ),
-    widgetForY( new ContrlosWidgets( this ) ),
-    widgetForR( new ContrlosWidgets( this ) )
+ContrlosPanel::ContrlosPanel( QWidget *parent, Circle *circle ) : QWidget( parent )//, circle( circle )
 {
-  widgetForX->init( QString( LABEL_NAME_X ), -MAX_COORD, MAX_COORD, DEFAULT_X);
-  widgetForY->init( QString( LABEL_NAME_Y ), -MAX_COORD, MAX_COORD  , DEFAULT_Y );
-  widgetForR->init( QString( LABEL_NAME_R ), MIN_RADIUS, MAX_RADIUS, DEFAULT_RADIUS );
+  /*  this->circle = circle;
+    widgetForX = new ContrlosWidgets( this );
+    widgetForY = new ContrlosWidgets( this );
+    widgetForR = new ContrlosWidgets( this );
 
+    widgetForX->init( QString( LABEL_NAME_X ), -MAX_COORD, MAX_COORD, DEFAULT_X);
+    widgetForY->init( QString( LABEL_NAME_Y ), -MAX_COORD, MAX_COORD, DEFAULT_Y );
+    widgetForR->init( QString( LABEL_NAME_R ), MIN_RADIUS, MAX_RADIUS, DEFAULT_RADIUS );
 
+    controlsLayout->addWidget( widgetForX, 0, 1 );
+    controlsLayout->addWidget( widgetForY, 1, 1 );
+    controlsLayout->addWidget( widgetForR, 2, 1 );
 
+    connect( widgetForX, SIGNAL( valueChanged( int ) ), this->circle, SLOT( setPositionX( int ) ) );
+    connect( widgetForY, SIGNAL( valueChanged( int ) ), this->circle, SLOT( setPositionY( int ) ) );
+    connect( widgetForR, SIGNAL( valueChanged( int ) ), this->circle, SLOT( setRadius( int ) ) );
+*/
   /* TODO: умереть, но доделать это решение!
     //QWidget *widget = new QWidget( this );
     setFixedSize( CONTRLOS_PANEL_WIDTH, CONTRLOS_PANEL_HEIGHT );

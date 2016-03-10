@@ -1,22 +1,20 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QTextStream>
-#include <QtCore/QCoreApplication>
 
-#include <QPushButton>
 
 MainWindow::MainWindow( QWidget *parent ) : QMainWindow( parent ),
     widgetForX( new ContrlosWidgets( this ) ),
     widgetForY( new ContrlosWidgets( this ) ),
     widgetForR( new ContrlosWidgets( this ) )
 {
-    QWidget *widget = new QWidget(this);
+    QWidget *widget = new QWidget( this );
 
     circle = new Circle();
 
     menu = new Menu( widget );
-   // controlsPanel = new ContrlosPanel( this );
     drawPanel = new DrawPanel( this, circle );
+   // controlsPanel = new ContrlosPanel( this, circle );
 
     setCentralWidget( widget );
 
@@ -30,14 +28,14 @@ MainWindow::MainWindow( QWidget *parent ) : QMainWindow( parent ),
     controlsPanelBoxLayout = new QGroupBox( tr( "Controls" ), this );
 */
     widgetForX->init( QString( LABEL_NAME_X ), -MAX_COORD, MAX_COORD, DEFAULT_X);
-    widgetForY->init( QString( LABEL_NAME_Y ), -MAX_COORD, MAX_COORD  , DEFAULT_Y );
+    widgetForY->init( QString( LABEL_NAME_Y ), -MAX_COORD, MAX_COORD, DEFAULT_Y );
     widgetForR->init( QString( LABEL_NAME_R ), MIN_RADIUS, MAX_RADIUS, DEFAULT_RADIUS );
 
     mainLayout->addWidget( drawPanel, 0, 0, 4, 1 );
+    //mainLayout->addWidget( controlsPanel, 0, 0, 4, 4 );
     mainLayout->addWidget( widgetForX, 0, 1 );
     mainLayout->addWidget( widgetForY, 1, 1 );
     mainLayout->addWidget( widgetForR, 2, 1 );
-
     /*
     drawPanelLayout->addWidget( drawPanel );
     drawPanelBoxLayout->setLayout( drawPanelLayout );
@@ -56,6 +54,7 @@ MainWindow::MainWindow( QWidget *parent ) : QMainWindow( parent ),
     connect( widgetForX, SIGNAL( valueChanged( int ) ), circle, SLOT( setPositionX( int ) ) );
     connect( widgetForY, SIGNAL( valueChanged( int ) ), circle, SLOT (setPositionY( int ) ) );
     connect( widgetForR, SIGNAL( valueChanged( int ) ), circle, SLOT( setRadius( int ) ) );
+
 }
 
 MainWindow::~MainWindow()

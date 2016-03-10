@@ -54,37 +54,37 @@ void Circle::Draw( QImage *pBackBuffer )
 
     memset( pubBuffer, WHITE_COLOR, pBackBuffer->byteCount() );
 
-    int bottom = myRound(posY - this->radius);
-    if (bottom < 0)
+    int bottom = myRound( posY - this->radius );
+    if( bottom < 0 )
     {
         bottom = 0;
     }
 
-    int top = myRound(posY + this->radius);
-    if (top > height)
+    int top = myRound( posY + this->radius );
+    if( top > height )
     {
         top = height;
     }
 
-    for (int line = bottom; line < top; line++)
+    for( int line = bottom; line < top; line++ )
     {
-        int left = myRound(posX - sqrt(this->radius*this->radius - (posY - line)*(posY - line)));
-        if (left < 0)
+        int left = myRound( posX - sqrt( this->radius*this->radius - ( posY - line )*( posY - line ) ) );
+        if( left < 0 )
         {
             left = 0;
         }
 
-        int right = myRound(posX + sqrt(this->radius*this->radius - (posY - line)*(posY - line)));
-        if (right > width)
+        int right = myRound( posX + sqrt( this->radius*this->radius - ( posY - line )*( posY - line ) ) );
+        if( right > width )
         {
             right = width;
         }
 
-        for (int offset = left; offset < right; offset++)
+        for( int offset = left; offset < right; offset++ )
         {
-            memset(pubBuffer + (line * pBackBuffer->bytesPerLine()) + (3 * offset),
+            memset( pubBuffer + ( line * pBackBuffer->bytesPerLine() ) + ( 3 * offset ),
                    BLACK_COLOR,
-                   3 * sizeof(uchar));
+                   3 * sizeof( uchar ) );
         }
     }
 }
