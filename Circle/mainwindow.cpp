@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QTextStream>
-
+#include <QDebug>
 
 MainWindow::MainWindow( QWidget *parent ) : QMainWindow( parent ),
     widgetForX( new ContrlosWidgets( this ) ),
@@ -11,9 +11,9 @@ MainWindow::MainWindow( QWidget *parent ) : QMainWindow( parent ),
     QWidget *widget = new QWidget( this );
 
     circle = new Circle();
-
     menu = new Menu( widget );
-    drawPanel = new DrawPanel( this, circle );
+
+
    // controlsPanel = new ContrlosPanel( this, circle );
 
     setCentralWidget( widget );
@@ -31,8 +31,9 @@ MainWindow::MainWindow( QWidget *parent ) : QMainWindow( parent ),
     widgetForY->init( QString( LABEL_NAME_Y ), -MAX_COORD, MAX_COORD, DEFAULT_Y );
     widgetForR->init( QString( LABEL_NAME_R ), MIN_RADIUS, MAX_RADIUS, DEFAULT_RADIUS );
 
-    mainLayout->addWidget( drawPanel, 0, 0, 4, 1 );
+    mainLayout->addWidget( createDrawPanel( circle ), 0, 0, 4, 1 );
     //mainLayout->addWidget( controlsPanel, 0, 0, 4, 4 );
+   // qDebug << "1";
     mainLayout->addWidget( widgetForX, 0, 1 );
     mainLayout->addWidget( widgetForY, 1, 1 );
     mainLayout->addWidget( widgetForR, 2, 1 );
@@ -62,13 +63,23 @@ MainWindow::~MainWindow()
 
 }
 
+QGroupBox *MainWindow::createDrawPanel( Circle *circle )
+{
+    drawPanelBoxLayout = new QGroupBox( tr( "Draw Panel" ));
+
+    drawPanel = new DrawPanel( NULL, circle );
+    drawPanelLayout->addWidget( drawPanel );
+    drawPanelBoxLayout->setLayout( drawPanelLayout );
+
+    return drawPanelBoxLayout;
+}
+
+void MainWindow::open()
+{
+
+}
+
 void MainWindow::save()
 {
-	//Save File
-}
 
-void MainWindow::load()
-{
-	//Load File
 }
-

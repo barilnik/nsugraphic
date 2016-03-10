@@ -32,10 +32,10 @@ static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_MainWindow = {
 QT_MOC_LITERAL(0, 0, 10), // "MainWindow"
 QT_MOC_LITERAL(1, 11, 4), // "save"
 QT_MOC_LITERAL(2, 16, 0), // ""
-QT_MOC_LITERAL(3, 17, 4) // "load"
+QT_MOC_LITERAL(3, 17, 4) // "open"
 
     },
-    "MainWindow\0save\0\0load"
+    "MainWindow\0save\0\0open"
 };
 #undef QT_MOC_LITERAL
 
@@ -70,7 +70,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->save(); break;
-        case 1: _t->load(); break;
+        case 1: _t->open(); break;
         default: ;
         }
     }

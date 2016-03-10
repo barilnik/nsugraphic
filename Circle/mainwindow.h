@@ -6,6 +6,11 @@
 #include <QGridLayout>
 #include <QGroupBox>
 #include <QWidget>
+#include <QFile>
+#include <QFileDialog>
+#include <QMessageBox>
+#include <QTextStream>
+
 
 #include "menu.h"
 #include "contrlospanel.h"
@@ -24,9 +29,11 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow( QWidget *parent = 0 );
     ~MainWindow();
+    QGroupBox *createDrawPanel( Circle *circle );
+    QGroupBox *createContrlos();
 private slots:
 	void save();
-	void load();
+    void open();
 private:
 	QGridLayout *mainLayout;
     QGroupBox *controlsPanelBoxLayout;
@@ -35,6 +42,8 @@ private:
     QGridLayout *drawPanelLayout;
 
     Menu *menu;
+    QAction *actionOpen;
+    QAction *actionSave;
 
    // ContrlosPanel *controlsPanel;
     ContrlosWidgets *widgetForX;
