@@ -10,11 +10,10 @@ MainWindow::MainWindow( QWidget *parent ) : QMainWindow( parent ),
     widgetForY( new ContrlosWidgets( this ) ),
     widgetForR( new ContrlosWidgets( this ) )
 {
-    QWidget *widget = new QWidget(this);
+    QWidget *widget = new QWidget( this );
 
-    circle = new Circle();
-
-    menu = new Menu( widget );
+    circle = new Circle( this );
+    menu = new Menu( this, circle );
    // controlsPanel = new ContrlosPanel( this );
     drawPanel = new DrawPanel( this, circle );
 
@@ -63,13 +62,4 @@ MainWindow::~MainWindow()
 
 }
 
-void MainWindow::save()
-{
-	//Save File
-}
-
-void MainWindow::load()
-{
-	//Load File
-}
 

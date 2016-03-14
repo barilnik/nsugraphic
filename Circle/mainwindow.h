@@ -6,7 +6,6 @@
 #include <QGridLayout>
 #include <QGroupBox>
 #include <QWidget>
-#include <QPixmap>
 
 #include "menu.h"
 //#include "contrlospanel.h"
@@ -25,9 +24,6 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow( QWidget *parent = 0 );
     ~MainWindow();
-private slots:
-	void save();
-	void load();
 private:
 	QGridLayout *mainLayout;
     QGroupBox *controlsPanelBoxLayout;
@@ -44,6 +40,7 @@ private:
 
     DrawPanel *drawPanel;
     Circle *circle;
+
 };
 
 #endif // MAINWINDOW_H

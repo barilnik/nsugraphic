@@ -17,7 +17,7 @@ void DrawPanel::paintEvent( QPaintEvent* /*event*/ )
         return;
     }
 
-    memset( pubBuffer, BLACK_COLOR, backBuffer.byteCount() );
+   // memset( pubBuffer, BLACK_COLOR, backBuffer.byteCount() );
 
     if ( m_pCircle )
     {

@@ -6,11 +6,13 @@
 #include <QWidget>
 #include <QAction>
 
+#include "circle.h"
+
 class Menu : public QWidget
 {
 	Q_OBJECT
 public:
-	explicit Menu( QWidget *parent = 0 );
+    explicit Menu( QWidget *parent, Circle *circle );
     void createActions();
 	~Menu();
 private slots:
@@ -19,6 +21,8 @@ private slots:
 private:
     QAction *saveAction;
     QAction *loadAction;
+
+    Circle *circle;
 
 };
 

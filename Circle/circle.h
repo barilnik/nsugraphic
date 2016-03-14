@@ -13,22 +13,26 @@ class Circle : public QObject
     Q_OBJECT
 
 public:
-    explicit Circle(QObject *parent = NULL);
-    Circle(double x, double y, double radius);
-    void Draw(QImage *pBackBuffer);
+    explicit Circle( QObject *parent = NULL );
+    Circle( double x, double y, double radius );
+    void Draw( QImage *pBackBuffer );
 
 public slots:
-    void setPositionX(int value);
-    void setPositionY(int value);
-    void setRadius(int value);
+    void setPositionX( int value );
+    void setPositionY( int value );
+    void setRadius( int value );
 
 Q_SIGNALS:
-    void valueChanged(int value);
+    void valueChanged( int value );
 
 private:
     double x;
     double y;
     double radius;
+
+    double getX();
+    double getY();
+    double getR();
 };
 
 

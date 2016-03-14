@@ -1,6 +1,6 @@
 #include "menu.h"
 
-Menu::Menu( QWidget *parent ) : QWidget( parent )
+Menu::Menu( QWidget *parent, Circle *circle ) : QWidget( parent ), circle( circle )
 {
     createActions();
 
@@ -17,8 +17,8 @@ void Menu::createActions()
     saveAction = new QAction( tr( "&Save Settings" ), this );
     loadAction = new QAction( tr( "&Load Settings" ), this );
 
-    connect( saveAction, SIGNAL( trigged() ), this, SLOT( save() ) );
-    connect( loadAction, SIGNAL( trigged() ), this, SLOT( load() ) );
+    connect( saveAction, SIGNAL( trigged() ), this, SLOT( saveSettings() ) );
+    connect( loadAction, SIGNAL( trigged() ), this, SLOT( loadSettings() ) );
 }
 
 void Menu::saveSettings()
