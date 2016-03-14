@@ -6,7 +6,7 @@ ContrlosWidgets::ContrlosWidgets( QWidget *parent ) : QWidget( parent )
 
     label = new QLabel( this );
     spinBox = new QSpinBox( this );
-    slider = new QSlider( this );
+    slider = new QSlider( Qt::Horizontal, this );
 
     label->setAlignment( Qt::AlignCenter );
     label->setFixedSize( LABEL_WIDTH, LABEL_HEIGHT );
@@ -17,10 +17,12 @@ ContrlosWidgets::ContrlosWidgets( QWidget *parent ) : QWidget( parent )
 
     slider->setFixedSize( SLIDER_SIZE_WIDTH, SLIDER_SIZE_HEIGHT );
     slider->setGeometry( 0, 2 * SLIDER_HEIGHT, SLIDER_WIDTH,  SLIDER_HEIGHT );
+    slider->setSingleStep( 50 );
 
     layout = new QGridLayout( this );
-    layout->addWidget( label, 0, 1 );
-    layout->addWidget( spinBox, 1, 1 );
+   // layout->setMargin( 10 );
+    layout->addWidget( label, 1, 1 );
+    layout->addWidget( spinBox, 1, 2 );
     layout->addWidget( slider, 2, 1 );
     setLayout( layout );
 
