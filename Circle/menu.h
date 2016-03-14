@@ -13,6 +13,9 @@ public:
 	explicit Menu( QWidget *parent = 0 );
     void createActions();
 	~Menu();
+private slots:
+    void saveSettings();
+    void loadSettings();
 private:
     QAction *saveAction;
     QAction *loadAction;

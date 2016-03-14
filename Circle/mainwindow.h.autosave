@@ -44,6 +44,8 @@ private:
 
     DrawPanel *drawPanel;
     Circle *circle;
+    
+    QPixmap *image;
 };
 
 #endif // MAINWINDOW_H

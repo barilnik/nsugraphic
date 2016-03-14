@@ -14,11 +14,21 @@ Menu::Menu( QWidget *parent ) : QWidget( parent )
 
 void Menu::createActions()
 {
-    saveAction = new QAction( tr( "&Save" ), this );
-    loadAction = new QAction( tr( "&Load" ), this );
+    saveAction = new QAction( tr( "&Save Settings" ), this );
+    loadAction = new QAction( tr( "&Load Settings" ), this );
 
     connect( saveAction, SIGNAL( trigged() ), this, SLOT( save() ) );
     connect( loadAction, SIGNAL( trigged() ), this, SLOT( load() ) );
+}
+
+void Menu::saveSettings()
+{
+
+}
+
+void Menu::loadSettings()
+{
+
 }
 
 Menu::~Menu()
