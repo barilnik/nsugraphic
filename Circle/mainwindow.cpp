@@ -67,7 +67,7 @@ QGroupBox *MainWindow::createDrawPanel( Circle *circle )
 {
     drawPanelBoxLayout = new QGroupBox( tr( "Draw Panel" ));
 
-    drawPanel = new DrawPanel( NULL, circle );
+    drawPanel = new DrawPanel( this, circle );
     drawPanelLayout->addWidget( drawPanel );
     drawPanelBoxLayout->setLayout( drawPanelLayout );
 

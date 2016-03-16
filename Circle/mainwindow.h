@@ -11,7 +11,6 @@
 #include <QMessageBox>
 #include <QTextStream>
 
-
 #include "menu.h"
 #include "contrlospanel.h"
 //#include "contrloswidgets.h"
