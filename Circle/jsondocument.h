@@ -26,6 +26,7 @@ private:
     QJsonObject panel;
     QJsonObject sizePanel;
 
+
     Circle *circle;
 };
 

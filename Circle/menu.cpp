@@ -23,7 +23,6 @@ void Menu::createActions()
 
 void Menu::saveSettings()
 {
-    //jsonDocument = new JsonDocument();
     QString fileString = QFileDialog::getSaveFileName(this, tr("Save File"), "", tr("Files (*.*)"));
     jsonDocument.write( circle->getX(), circle->getY(), circle->getR(), fileString );
 }

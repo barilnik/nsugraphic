@@ -24,7 +24,7 @@ void JsonDocument::write( double positionX, double positionY, double positionR, 
     json["panel"] = panel;
 
     QFile saveFile( fileString );
-    saveFile.setFileName("save1.json");
+    saveFile.setFileName("save.json");
 
     if( !saveFile.open( QIODevice::WriteOnly ) ) {
         qWarning( "Couldn't open save file." );
@@ -43,9 +43,10 @@ void JsonDocument::read( QString fileString, Circle *circle )
 
     QFile loadFile( fileString );
     loadFile.open(QIODevice::ReadOnly | QIODevice::Text);
-    QJsonDocument jsonDocument;
+    //QJsonDocument jsonDocument;
     jsonDocument.fromJson( loadFile.readAll() );
-    QJsonObject json = jsonDocument.object();
+    //QJsonObject json = jsonDocument.object();
+    json = jsonDocument.object();
 
     int newX = json.value("x").toInt();
     int newY = json.value("y").toInt();
