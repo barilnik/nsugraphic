@@ -26,3 +26,8 @@ void DrawPanel::paintEvent( QPaintEvent* /*event*/ )
 
     painter.drawImage( 0, 0, backBuffer );
 }
+
+void DrawPanel::setSizePanel( int width, int height )
+{
+    // width, height);
+}

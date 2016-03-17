@@ -48,7 +48,7 @@ MainWindow::MainWindow( QWidget *parent ) : QMainWindow( parent ),
     mainLayout->addWidget( controlsPanelBoxLayout, 1, 2 );
 */
     setLayout( mainLayout );
-    resize( 800, 600 );
+    resize( width, height );
 
     connect(circle, SIGNAL( valueChanged( int ) ), this->drawPanel, SLOT( repaint() ) );
 
@@ -60,6 +60,11 @@ MainWindow::MainWindow( QWidget *parent ) : QMainWindow( parent ),
 MainWindow::~MainWindow()
 {
 
+}
+
+void MainWindow::setSize(int width, int height)
+{
+    resize( width, height );
 }
 
 

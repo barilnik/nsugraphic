@@ -30,7 +30,8 @@ void Menu::saveSettings()
 
 void Menu::loadSettings()
 {
-
+    QString fileString = QFileDialog::getOpenFileName(this, tr("Load File"), "", tr("Files (*.*)"));
+    jsonDocument.read( fileString, circle );
 }
 
 Menu::~Menu()

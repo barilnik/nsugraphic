@@ -11,6 +11,7 @@ class DrawPanel : public QWidget
     Q_OBJECT
 public:
     explicit DrawPanel( QWidget *parent, Circle *circle );
+    void setSizePanel( int width, int height );
 protected:
     void paintEvent( QPaintEvent *event );
 

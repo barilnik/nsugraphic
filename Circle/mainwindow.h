@@ -12,6 +12,7 @@
 #include "contrloswidgets.h"
 #include "drawpanel.h"
 #include "circle.h"
+#include "resource.h"
 
 namespace Ui {
 class MainWindow;
@@ -24,6 +25,7 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow( QWidget *parent = 0 );
     ~MainWindow();
+    void setSize( int width, int height );
 private:
 	QGridLayout *mainLayout;
     QGroupBox *controlsPanelBoxLayout;
@@ -40,6 +42,9 @@ private:
 
     DrawPanel *drawPanel;
     Circle *circle;
+
+    int width = DEFAULT_WIDTH;
+    int height = DEFAULT_HEIGHT;
 
 };
 

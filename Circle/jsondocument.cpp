@@ -7,45 +7,29 @@ JsonDocument::JsonDocument()
 
 void JsonDocument::write( double positionX, double positionY, double positionR, QString fileString )
 {
-    //json = new QJsonDocument( );
-   /* position{
-      { "x", positionX },
-        { "y", positionY }
-    };*/
-
-
     radius["R"] = positionR;
     position["x"] = positionX;
     position["y"] = positionY;
     qDebug( "R:", positionR);
 
-    //circle.append( radius );
-    //circle.append( position );
-    circle << radius;
-    circle << position;
+    jsonCircle << radius;
+    jsonCircle << position;
 
     sizePanel["x"] = DEFAULT_HEIGHT;
     sizePanel["y"] = DEFAULT_WIDTH;
 
-    panel["panel"] = sizePanel;
+    panel["size"] = sizePanel;
 
-    json["circles"] = circle;
+    json["circles"] = jsonCircle;
     json["panel"] = panel;
 
-    QFile saveFile( fileString );//( QStringLiteral( "D:\\Education\Graphic\Circle\save.json" ) );
+    QFile saveFile( fileString );
     saveFile.setFileName("save1.json");
 
     if( !saveFile.open( QIODevice::WriteOnly ) ) {
         qWarning( "Couldn't open save file." );
     }
 
-    //jsonArray.append( circle );
-    //jsonArray.append( panel );
-
-    //jsonArray << circle;
-    //jsonArray << panel;
-
-   // json["json"] = jsonArray;
     jsonDocument.setObject( json );
 
     saveFile.write( jsonDocument.toJson() );
@@ -53,7 +37,23 @@ void JsonDocument::write( double positionX, double positionY, double positionR, 
     saveFile.close();
 }
 
-void JsonDocument::read()
+void JsonDocument::read( QString fileString, Circle *circle )
 {
+    this->circle = circle;
 
+    QFile loadFile( fileString );
+    loadFile.open(QIODevice::ReadOnly | QIODevice::Text);
+    QJsonDocument jsonDocument;
+    jsonDocument.fromJson( loadFile.readAll() );
+    QJsonObject json = jsonDocument.object();
+
+    int newX = json.value("x").toInt();
+    int newY = json.value("y").toInt();
+    int newR = json.value("R").toInt();
+    int newWidth = json.value("width").toInt();
+    int newHeight = json.value("height").toInt();
+
+    circle->setPositionX( newX );
+    circle->setPositionY( newY );
+    circle->setRadius( newR );
 }

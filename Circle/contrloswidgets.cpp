@@ -43,3 +43,5 @@ void ContrlosWidgets::init( QString labelText, int minValue, int maxValue, int d
     slider->setMinimum( minValue );
     slider->setValue( defaultValue );
 }
+
+

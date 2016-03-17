@@ -7,8 +7,8 @@
 #include <QAction>
 #include <QFileDialog>
 
-#include "circle.h"
 #include "jsondocument.h"
+#include "circle.h"
 
 class Menu : public QWidget
 {
@@ -23,10 +23,8 @@ private slots:
 private:
     QAction *saveAction;
     QAction *loadAction;
-
-    Circle *circle;
     JsonDocument jsonDocument;
-
+    Circle *circle;
 };
 
 #endif // MENU_H
