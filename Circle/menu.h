@@ -5,6 +5,7 @@
 #include <QMenuBar>
 #include <QWidget>
 #include <QAction>
+#include <QFileDialog>
 
 #include "circle.h"
 #include "jsondocument.h"

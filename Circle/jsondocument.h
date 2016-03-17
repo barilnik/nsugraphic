@@ -13,7 +13,7 @@ class JsonDocument
 {
 public:
     JsonDocument();
-    void write( double positionX, double positionY, double positionR );
+    void write( double positionX, double positionY, double positionR, QString filestring );
     void read();
 private:
     QJsonDocument jsonDocument;
