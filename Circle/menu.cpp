@@ -23,7 +23,8 @@ void Menu::createActions()
 
 void Menu::saveSettings()
 {
-
+    //jsonDocument = new JsonDocument();
+    jsonDocument.write( circle->getX(), circle->getY(), circle->getR() );
 }
 
 void Menu::loadSettings()

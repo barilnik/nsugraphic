@@ -21,7 +21,8 @@ SOURCES += main.cpp\
     spinbox.cpp \
     drawpanel.cpp \
     circle.cpp \
-    contrloswidgets.cpp
+    contrloswidgets.cpp \
+    jsondocument.cpp
 
 HEADERS  += mainwindow.h \
     menu.h \
@@ -32,6 +33,7 @@ HEADERS  += mainwindow.h \
     spinbox.h \
     drawpanel.h \
     circle.h \
-    contrloswidgets.h
+    contrloswidgets.h \
+    jsondocument.h
 
 FORMS    += mainwindow.ui

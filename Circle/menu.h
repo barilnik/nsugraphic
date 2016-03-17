@@ -7,6 +7,7 @@
 #include <QAction>
 
 #include "circle.h"
+#include "jsondocument.h"
 
 class Menu : public QWidget
 {
@@ -23,6 +24,7 @@ private:
     QAction *loadAction;
 
     Circle *circle;
+    JsonDocument jsonDocument;
 
 };
 
