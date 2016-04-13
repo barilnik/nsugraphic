@@ -20,7 +20,8 @@ void DrawPanel::paintEvent(QPaintEvent *event)
     QPainter panelPainter(this);
     QImage *image = painter->paint(this->width(), this->height());
 
-    if(image){
+    if(image)
+    {
         panelPainter.drawImage(0, 0, *image);
         delete image;
     }

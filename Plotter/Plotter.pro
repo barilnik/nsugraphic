@@ -20,7 +20,9 @@ SOURCES += main.cpp\
     jsondocument.cpp \
     menu.cpp \
     controls.cpp \
-    imagecreator.cpp
+    imagecreator.cpp \
+    vector.cpp \
+    mainwidget.cpp
 
 HEADERS  += mainwindow.h \
     bernoullilemniscate.h \
@@ -31,6 +33,8 @@ HEADERS  += mainwindow.h \
     controls.h \
     resource.h \
     imagecreator.h \
-    shape.h
+    shape.h \
+    vector.h \
+    mainwidget.h
 
 FORMS    += mainwindow.ui

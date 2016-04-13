@@ -2,6 +2,7 @@
 #define DRAWPANEL_H
 
 #include <QWidget>
+#include <QPainter>
 #include "imagecreator.h"
 
 class DrawPanel : public QWidget
