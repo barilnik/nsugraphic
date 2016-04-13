@@ -43,11 +43,16 @@ QImage DrawPanel::getImage()
 
 void DrawPanel::saveImage(QString fileString)
 {
+    QByteArray ba = fileString.toLatin1();
+        char *fileChar = ba.data();
+
     //backBuffer->save("D:\\kkkk.jpg");
-    QFile *file = new QFile( fileString );
-    if (fileString.isNull())
-       return;
-    backBuffer->save(fileString, 0, 100);
+    QFile *file = new QFile( fileChar );
+    /*if (fileString.isNull())
+       return;*/
+    if(file->open(QIODevice::ReadWrite)){
+        backBuffer->save(file, 0, 100);
+    }
 /*
       if(!file->open(QIODevice::ReadWrite))
       {

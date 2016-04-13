@@ -48,7 +48,7 @@ void Menu::saveImage()
                                                      /* QString::fromUtf8("Сохранить файл"),
                                                       QDir::currentPath(),
                                                       "Image (*.png);;All files (*.*)");*///getSaveFileName( this, tr( "Save File" ), "", tr( "Files (*.png)" ) );
-    QString fileString = QFileDialog::getSaveFileName(0, "Сохранить как...", QDir::currentPath(), "All types(*.*);;PNG (*.png);;JPG (*jpeg *jpg);; BMP (*.bmp)");
+    QString fileString = QFileDialog::getSaveFileName(this, "Сохранить как...", "", "All types(*.*);;PNG (*.png);;JPG (*jpeg *jpg);; BMP (*.bmp)");
     drawPanel->saveImage( fileString );
 }
 
