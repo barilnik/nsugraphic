@@ -1,0 +1,41 @@
+#ifndef RESOURCE_H
+#define RESOURCE_H
+
+#define CONTROLS_WIDTH 200
+#define CONTROLS_HEIGHT 20
+
+#define LABEL_HEIGHT 20
+#define LABEL_WIDTH 50
+
+#define SLIDER_WIDTH 200
+#define SLIDER_HEIGHT 20
+#define SLIDER_SIZE_WIDTH 200
+#define SLIDER_SIZE_HEIGHT 20
+
+#define SPINBOX_WIDTH 50
+#define SPINBOX_HEIGHT 20
+#define SPINBOX_SIZE_WIDTH 50
+#define SPINBOX_SIZE_HEIGHT 20
+
+#define MAX_COORD 1000
+#define MIN_COORD -1000
+#define DEFAULT_VALUE 0
+#define MAX_RADIUS 1000
+#define MIN_RADIUS 0
+#define DEFAULT_X 0
+#define DEFAULT_Y 0
+#define DEFAULT_HEIGHT 600
+#define DEFAULT_WIDTH 800
+
+#define DEFAULT_X 0
+#define DEFAULT_Y 0
+#define DEFAULT_RADIUS 20
+
+#define WHITE_COLOR 255
+#define BLACK_COLOR 0
+
+#define LABEL_NAME_X "Position X:"
+#define LABEL_NAME_Y "Position Y:"
+#define LABEL_NAME_R "Position R:"
+
+#endif // RESOURCE_H
