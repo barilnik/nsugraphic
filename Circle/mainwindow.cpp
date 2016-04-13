@@ -62,7 +62,7 @@ MainWindow::~MainWindow()
 
 }
 
-void MainWindow::setSize(int width, int height)
+void MainWindow::setSize( int width, int height )
 {
     resize( width, height );
 }

@@ -22,7 +22,8 @@ SOURCES += main.cpp\
     drawpanel.cpp \
     circle.cpp \
     contrloswidgets.cpp \
-    jsondocument.cpp
+    jsondocument.cpp \
+    file.cpp
 
 HEADERS  += mainwindow.h \
     menu.h \
@@ -34,6 +35,7 @@ HEADERS  += mainwindow.h \
     drawpanel.h \
     circle.h \
     contrloswidgets.h \
-    jsondocument.h
+    jsondocument.h \
+    file.h
 
 FORMS    += mainwindow.ui

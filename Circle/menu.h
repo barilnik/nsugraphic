@@ -9,6 +9,8 @@
 
 #include "jsondocument.h"
 #include "circle.h"
+#include "drawpanel.h"
+#include "file.h"
 
 class Menu : public QWidget
 {
@@ -20,11 +22,15 @@ public:
 private slots:
     void saveSettings();
     void loadSettings();
+    void saveImage();
 private:
-    QAction *saveAction;
-    QAction *loadAction;
+    QAction *saveSetingsAction;
+    QAction *loadSettingsAction;
+    QAction *saveImageAction;
     JsonDocument jsonDocument;
     Circle *circle;
+    DrawPanel *drawPanel;
+    File *file;
 };
 
 #endif // MENU_H
