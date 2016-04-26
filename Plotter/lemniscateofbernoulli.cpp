@@ -1,6 +1,6 @@
 #include "lemniscateofbernoulli.h"
 
-LemniscateOfBernoulli::LemniscateOfBernoulli( QWidget *parent )
+LemniscateOfBernoulli::LemniscateOfBernoulli( QObject *parent ) : QObject( parent )
 {
     X1 = DEFAULT_X1;
     X2 = DEFAULT_X2;

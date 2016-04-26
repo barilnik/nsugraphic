@@ -6,16 +6,16 @@
 
 #include "lemniscateofbernoulli.h"
 
-class DrawPanel : QWidget
+class DrawPanel : public QWidget
 {
     Q_OBJECT
 public:
-    explicit DrawPanel( QWidget *parent, LemniscateOfBernoulli *newLemniscate = 0);
+    explicit DrawPanel( QWidget *parent = 0, LemniscateOfBernoulli *newLemniscate = 0);
 protected:
     void paintEvent( QPaintEvent *event );
 private:
     LemniscateOfBernoulli *lemniscate;
-    int drafType;
+    //int drafType;
 };
 
 #endif // DRAWPANEL_H

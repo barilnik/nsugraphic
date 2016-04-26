@@ -1,7 +1,7 @@
 #ifndef LEMNISCATEOFBERNOULLI_H
 #define LEMNISCATEOFBERNOULLI_H
 
-#include <QWidget>
+#include <QObject>
 #include <QImage>
 #include <math.h>
 #include <utility>
@@ -11,11 +11,11 @@
 
 #include "resource.h"
 
-class LemniscateOfBernoulli : QWidget
+class LemniscateOfBernoulli : public QObject
 {
     Q_OBJECT
 public:
-    explicit LemniscateOfBernoulli( QWidget *parent );
+    explicit LemniscateOfBernoulli( QObject *parent = 0 );
     int round( float x );
     int getX1() const;
     int getX2() const;
