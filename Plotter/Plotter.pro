@@ -14,27 +14,16 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    bernoullilemniscate.cpp \
-    drawpanel.cpp \
-    controlspanel.cpp \
-    jsondocument.cpp \
     menu.cpp \
-    controls.cpp \
-    imagecreator.cpp \
-    vector.cpp \
-    mainwidget.cpp
+    lemniscateofbernoulli.cpp \
+    drawpanel.cpp \
+    controlpanel.cpp
 
 HEADERS  += mainwindow.h \
-    bernoullilemniscate.h \
-    drawpanel.h \
-    controlspanel.h \
-    jsondocument.h \
     menu.h \
-    controls.h \
     resource.h \
-    imagecreator.h \
-    shape.h \
-    vector.h \
-    mainwidget.h
+    lemniscateofbernoulli.h \
+    drawpanel.h \
+    controlpanel.h
 
 FORMS    += mainwindow.ui

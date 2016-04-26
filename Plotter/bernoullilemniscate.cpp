@@ -1,4 +1,5 @@
 #include "bernoullilemniscate.h"
+/*
 #include <limits>
 
 BernoulliLemniscate::BernoulliLemniscate(int const &x1, int const &y1, int const &x2, int const &y2, int const &r, QObject *parent) : QObject(parent), f1(x1, y1), f2(x2, y2)
@@ -289,3 +290,4 @@ void BernoulliLemniscate::draw(QImage* image){
 //    start = getNextPoint(start, start);
     drawPart(start, false, image);
 }
+*/

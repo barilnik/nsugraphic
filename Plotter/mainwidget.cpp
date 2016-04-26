@@ -1,5 +1,5 @@
 #include "mainwidget.h"
-
+/*
 MainWidget::MainWidget(QWidget *parent) : QWidget(parent)
 {
     layout = new QGridLayout(this);
@@ -46,3 +46,4 @@ MainWidget::~MainWidget()
 QMap<QString, QString>* MainWidget::getData(){
     return controls->getData();
 }
+*/

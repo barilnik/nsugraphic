@@ -22,14 +22,15 @@
 #define DEFAULT_VALUE 0
 #define MAX_RADIUS 1000
 #define MIN_RADIUS 0
-#define DEFAULT_X 0
-#define DEFAULT_Y 0
+
 #define DEFAULT_HEIGHT 600
 #define DEFAULT_WIDTH 800
 
-#define DEFAULT_X 0
-#define DEFAULT_Y 0
-#define DEFAULT_RADIUS 20
+#define DEFAULT_X1 -10
+#define DEFAULT_Y1 10
+#define DEFAULT_X2 0
+#define DEFAULT_Y2 0
+#define DEFAULT_RADIUS 10
 
 #define WHITE_COLOR 255
 #define BLACK_COLOR 0

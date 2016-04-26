@@ -19,9 +19,18 @@ private:
     Ui::MainWindow *ui;
 };*/
 #include <QMainWindow>
-#include <QString>
+#include <QGridLayout>
+#include <QGroupBox>
+#include <QAction>
+#include <QMenu>
+#include <QMenuBar>
 #include <QFileDialog>
-#include "mainwidget.h"
+#include <QMessageBox>
+#include <QTextStream>
+
+#include "lemniscateofbernoulli.h"
+#include "controlpanel.h"
+#include "drawpanel.h"
 
 class MainWindow : public QMainWindow
 {
@@ -31,7 +40,22 @@ public:
     MainWindow(QWidget *parent = 0);
     ~MainWindow();
 private:
-    MainWidget *mainWidget;
+    QGroupBox *createFirstExclusiveGroup();
+    QGroupBox *createSecondExclusiveGroup();
+
+    LemniscateOfBernoulli *lemniscate;
+    DrawPanel *drawPanel;
+    ControlPanel *valueX1;
+    ControlPanel *valueX2;
+    ControlPanel *valueY1;
+    ControlPanel *valueY2;
+    ControlPanel *valueR;
+
+    QMenu *fileMenu;
+    QAction *openAct;
+    QAction *saveAct;
+
+    void createMenus();
 signals:
     void dataChanged(QMap<QString, QString> map);
 public slots:

@@ -1,5 +1,5 @@
 #include "controlspanel.h"
-
+/*
 ControlsPanel::ControlsPanel(QWidget *parent, const int &x1, const int &y1, const int &x2, const int &y2, const int &r): QGroupBox(tr("Controls"), parent)
 {
     controls = new QGridLayout(this);
@@ -173,3 +173,4 @@ void ControlsPanel::initElements(const int &x1, const int &y1, const int &x2, co
     controls->addWidget(rSpinBox, 1, 4);
     controls->addWidget(rSlider, 2, 4);
 }
+*/

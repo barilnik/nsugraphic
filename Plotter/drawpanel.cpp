@@ -1,28 +1,27 @@
 #include "drawpanel.h"
 
-DrawPanel::DrawPanel( ImageCreator *painter, QWidget *parent ) : QWidget( parent )
+DrawPanel::DrawPanel( QWidget *parent, LemniscateOfBernoulli *newLemniscate ) : QWidget( parent )
 {
-    this->painter = painter;
+    lemniscate = newLemniscate;
+    connect( lemniscate, SIGNAL( repaint() ), this, SLOT( repaint() ) );
 }
 
-DrawPanel::~DrawPanel()
+void DrawPanel::paintEvent( QPaintEvent */*event*/ )
 {
+    QPainter painter( this );
+    QImage backBuffer( width(), height(), QImage::Format_RGB888 );
 
-}
-
-void DrawPanel::repaint()
-{
-    this->update();
-}
-
-void DrawPanel::paintEvent(QPaintEvent *event)
-{
-    QPainter panelPainter(this);
-    QImage *image = painter->paint(this->width(), this->height());
-
-    if(image)
+    uchar* pubBuffer = backBuffer.bits();
+    if ( !pubBuffer )
     {
-        panelPainter.drawImage(0, 0, *image);
-        delete image;
+        return;
     }
+    memset( pubBuffer, 255, backBuffer.byteCount() );
+    //
+    if( lemniscate )
+    {
+        lemniscate->Draw( &backBuffer );
+    }
+    //
+    painter.drawImage( 0,0, backBuffer );
 }

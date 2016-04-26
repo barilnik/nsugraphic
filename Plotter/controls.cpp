@@ -1,5 +1,5 @@
 #include "controls.h"
-
+/*
 Controls::Controls( QWidget *parent ) : QWidget( parent )
 {
     setFixedSize( CONTROLS_WIDTH, 3 * CONTROLS_HEIGHT );
@@ -42,4 +42,4 @@ void Controls::init( QString labelText, int minValue, int maxValue, int defaultV
     slider->setMaximum( maxValue );
     slider->setMinimum( minValue );
     slider->setValue( defaultValue );
-}
+}*/

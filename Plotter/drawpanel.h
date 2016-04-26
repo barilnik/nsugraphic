@@ -3,20 +3,19 @@
 
 #include <QWidget>
 #include <QPainter>
-#include "imagecreator.h"
 
-class DrawPanel : public QWidget
+#include "lemniscateofbernoulli.h"
+
+class DrawPanel : QWidget
 {
     Q_OBJECT
 public:
-    DrawPanel( ImageCreator *painter, QWidget *parent = 0 );
-    ~DrawPanel();
-private:
-    ImageCreator *painter;
+    explicit DrawPanel( QWidget *parent, LemniscateOfBernoulli *newLemniscate = 0);
 protected:
-    void paintEvent(QPaintEvent *event);
-public slots:
-    void repaint();
+    void paintEvent( QPaintEvent *event );
+private:
+    LemniscateOfBernoulli *lemniscate;
+    int drafType;
 };
 
 #endif // DRAWPANEL_H
