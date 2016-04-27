@@ -2,6 +2,8 @@
 #include "circle.h"
 #include "jsondocument.h"
 #include <QApplication>
+#include <QTest>
+#include "test_circle.h"
 
 int main( int argc, char *argv[] )
 {
@@ -52,6 +54,8 @@ int main( int argc, char *argv[] )
         QApplication a( argc, argv );
         MainWindow w;
         w.show();
+
+        QTest::qExec(new Test_Circle, argc, argv);
 
         return a.exec();
     }

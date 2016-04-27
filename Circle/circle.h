@@ -21,6 +21,8 @@ public:
     double getY();
     double getR();
 
+    double getPositionX();
+
 public slots:
     void setPositionX( int value );
     void setPositionY( int value );

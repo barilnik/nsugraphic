@@ -25,6 +25,11 @@ void Circle::setPositionX( int value )
     emit valueChanged( value );
 }
 
+double Circle::getPositionX()
+{
+    return this->x;
+}
+
 void Circle::setPositionY( int value )
 {
     this->y = value;

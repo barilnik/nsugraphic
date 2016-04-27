@@ -4,7 +4,9 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui \
+            testlib
+
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -23,7 +25,8 @@ SOURCES += main.cpp\
     circle.cpp \
     contrloswidgets.cpp \
     jsondocument.cpp \
-    file.cpp
+    file.cpp \
+    test_circle.cpp
 
 HEADERS  += mainwindow.h \
     menu.h \
@@ -36,6 +39,7 @@ HEADERS  += mainwindow.h \
     circle.h \
     contrloswidgets.h \
     jsondocument.h \
-    file.h
+    file.h \
+    test_circle.h
 
 FORMS    += mainwindow.ui
