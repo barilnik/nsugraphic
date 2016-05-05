@@ -17,13 +17,15 @@ SOURCES += main.cpp\
     menu.cpp \
     lemniscateofbernoulli.cpp \
     drawpanel.cpp \
-    controlpanel.cpp
+    controlpanel.cpp \
+    file.cpp
 
 HEADERS  += mainwindow.h \
     menu.h \
     resource.h \
     drawpanel.h \
     controlpanel.h \
-    lemniscate.h
+    lemniscate.h \
+    file.h
 
 FORMS    += mainwindow.ui
