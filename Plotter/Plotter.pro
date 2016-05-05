@@ -18,7 +18,8 @@ SOURCES += main.cpp\
     lemniscateofbernoulli.cpp \
     drawpanel.cpp \
     controlpanel.cpp \
-    file.cpp
+    file.cpp \
+    groupwidgets.cpp
 
 HEADERS  += mainwindow.h \
     menu.h \
@@ -26,6 +27,7 @@ HEADERS  += mainwindow.h \
     drawpanel.h \
     controlpanel.h \
     lemniscate.h \
-    file.h
+    file.h \
+    groupwidgets.h
 
 FORMS    += mainwindow.ui
