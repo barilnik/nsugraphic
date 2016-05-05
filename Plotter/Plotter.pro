@@ -19,7 +19,8 @@ SOURCES += main.cpp\
     drawpanel.cpp \
     controlpanel.cpp \
     file.cpp \
-    groupwidgets.cpp
+    groupwidgets.cpp \
+    jsondocument.cpp
 
 HEADERS  += mainwindow.h \
     menu.h \
@@ -28,6 +29,7 @@ HEADERS  += mainwindow.h \
     controlpanel.h \
     lemniscate.h \
     file.h \
-    groupwidgets.h
+    groupwidgets.h \
+    jsondocument.h
 
 FORMS    += mainwindow.ui
