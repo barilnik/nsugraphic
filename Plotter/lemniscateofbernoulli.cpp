@@ -1,4 +1,4 @@
-#include "lemniscateofbernoulli.h"
+#include "lemniscate.h"
 
 LemniscateOfBernoulli::LemniscateOfBernoulli( QObject *parent ) : QObject( parent )
 {

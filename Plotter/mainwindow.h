@@ -28,7 +28,7 @@ private:
 #include <QMessageBox>
 #include <QTextStream>
 
-#include "lemniscateofbernoulli.h"
+#include "lemniscate.h"
 #include "controlpanel.h"
 #include "drawpanel.h"
 

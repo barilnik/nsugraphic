@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2016-03-28T16:39:53
+# Project created by QtCreator 2016-05-04T20:13:57
 #
 #-------------------------------------------------
 
@@ -8,22 +8,21 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = Plotter
+TARGET = Sphere
 TEMPLATE = app
 
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    menu.cpp \
-    lemniscateofbernoulli.cpp \
     drawpanel.cpp \
-    controlpanel.cpp
+    controlspanel.cpp \
+    sphere.cpp \
+    groupwidgets.cpp
 
 HEADERS  += mainwindow.h \
-    menu.h \
-    resource.h \
     drawpanel.h \
-    controlpanel.h \
-    lemniscate.h
+    controlspanel.h \
+    sphere.h \
+    groupwidgets.h
 
 FORMS    += mainwindow.ui
