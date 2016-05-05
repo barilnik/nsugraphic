@@ -8,7 +8,6 @@
 #include <vector>
 #include <algorithm>
 #include <QFile>
-#include <QDomDocument>
 
 class Lemniscate : public QObject
 {

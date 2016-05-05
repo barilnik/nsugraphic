@@ -30,10 +30,6 @@ void DrawPanel::paintEvent(QPaintEvent */*event*/)
     //
     painter.drawImage( 0,0, backBuffer );
 }
-void DrawPanel::setSizePanel( int width, int height )
-{
-    // width, height);
-}
 
 
 void DrawPanel::saveImage(QString fileString)
@@ -46,7 +42,7 @@ void DrawPanel::saveImage(QString fileString)
     /*if (fileString.isNull())
        return;*/
     if(file->open(QIODevice::ReadWrite)){
-        backBuffer->save(file, 0, 100);
+        //backBuffer->save(file, 0, 100);
     }
 /*
       if(!file->open(QIODevice::ReadWrite))

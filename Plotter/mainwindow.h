@@ -7,6 +7,8 @@
 #include "lemniscate.h"
 #include "drawpanel.h"
 #include "groupwidgets.h"
+#include <QAction>
+#include <QMenu>
 #include <QMenuBar>
 #include <QFileDialog>
 #include <QMessageBox>
@@ -35,5 +37,16 @@ private:
     GroupWidgets *controlRadius;
 
     Menu *menu;
+
+    QMenu *fileMenu;
+    QAction *openAct;
+    QAction *saveAct;
+
+    void createMenus();
+/*
+private slots:
+    void open();
+    void save();*/
+};
 
 #endif // MAINWINDOW_H

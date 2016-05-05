@@ -1,119 +1,81 @@
 #include "mainwindow.h"
-//#include "ui_mainwindow.h"
-/*
-MainWindow::MainWindow(QWidget *parent) :
-    QMainWindow(parent),
-    ui(new Ui::MainWindow)
-{
-    ui->setupUi(this);
-}
 
-MainWindow::~MainWindow()
-{
-    delete ui;
-}
-*/
-MainWindow::MainWindow(QWidget *parent) : QMainWindow( parent )
+MainWindow::MainWindow( QWidget *parent ) : QMainWindow(parent)
 {
     QWidget *widget = new QWidget( this );
     setCentralWidget( widget );
 
-    lemniscate = new LemniscateOfBernoulli();
+    lemnisccate = new Lemniscate();
+
+    menu = new Menu( this, lemnisccate );
 
     QGridLayout *grid = new QGridLayout;
-    grid->addWidget( createFirstExclusiveGroup(), 0, 0, 5, 0 );
-    grid->addWidget( createSecondExclusiveGroup(), 5, 0 );
-
+    grid->addWidget( createDrawPanel(), 0, 0, 4, 1 );
+    grid->addWidget( createControlPanel(), 0, 2 );
+    grid->setMargin( 10 );
     widget->setLayout( grid );
+
 
     setWindowTitle( tr( "Plotter" ) );
     resize( 800, 800 );
 
-    createMenus();
-   /* QAction *save = new QAction(this);
-    save->setText(tr("Save"));
-    connect(save, SIGNAL(triggered()), this, SLOT(save()));
-
-    QAction *load = new QAction(this);
-    load->setText(tr("Load"));
-    connect(load, SIGNAL(triggered()), this, SLOT(load()));
-
-    QMenu* file = new QMenu("File", this);
-    file->addAction(save);
-    file->addAction(load);
-
-    QMenuBar *menuBar = new QMenuBar(this);
-    menuBar->addMenu(file);*/
-/*
-    mainWidget = new MainWidget(this);
-    connect(this, SIGNAL(dataChanged(QMap<QString,QString>)), mainWidget, SLOT(changeData(QMap<QString,QString>)));
-
-    setMenuBar(menuBar);
-    setCentralWidget(mainWidget);*/
-   /* setObjectName("Plotter");
-    resize(800, 600);*/
+    //createMenus();
 }
 
-QGroupBox *MainWindow::createFirstExclusiveGroup()
+QGroupBox *MainWindow::createDrawPanel()
 {
-    QGroupBox *groupBox = new QGroupBox(tr("Draw Panel"));
-    drawPanel = new DrawPanel(this, lemniscate);
+    QGroupBox *groupBox = new QGroupBox( tr( "Draw Panel" ) );
+    drawPanel = new DrawPanel( this, lemnisccate );
 
     QVBoxLayout *vbox = new QVBoxLayout;
-    vbox->addWidget(drawPanel);
+    vbox->addWidget( drawPanel );
 
-    groupBox->setLayout(vbox);
+    groupBox->setLayout( vbox );
 
     return groupBox;
 }
-QGroupBox *MainWindow::createSecondExclusiveGroup()
+QGroupBox *MainWindow::createControlPanel()
 {
-    QGroupBox *groupBox = new QGroupBox(tr("Controls"));
-    QGridLayout *grid = new QGridLayout(this);
+    QGroupBox *groupBox = new QGroupBox( tr( "Controls" ) );
+    QGridLayout *grid = new QGridLayout( this );
 
-    valueX1 = new ControlPanel(this);
-    valueX2 = new ControlPanel(this);
-    valueY1 = new ControlPanel(this);
-    valueY2 = new ControlPanel(this);
-    valueR = new ControlPanel(this);
+    controlX1 = new GroupWidgets( this );
+    controlX2 = new GroupWidgets( this );
+    controlY1 = new GroupWidgets( this );
+    controlY2 = new GroupWidgets( this );
+    controlRadius = new GroupWidgets( this );
 
-    valueX1->setDefaults(tr("x1"),-1000,1000,-10);
-    valueX2->setDefaults(tr("x2"),-1000,1000,10);
-    valueY1->setDefaults(tr("y1"),-1000,1000,0);
-    valueY2->setDefaults(tr("y2"),-1000,1000,0);
-    valueR->setDefaults(tr("r"),0,1000,10);
+    controlX1->setDefaults( tr( "x1" ), -1000, 1000, -10 );
+    controlX2->setDefaults( tr( "x2" ), -1000, 1000, 10 );
+    controlY1->setDefaults( tr( "y1" ), -1000, 1000, 0 );
+    controlY2->setDefaults( tr( "y2" ), -1000, 1000, 0 );
+    controlRadius->setDefaults( tr( "r" ), 0, 1000, 10 );
 
-    grid->addWidget(valueX1,0,0);
-    grid->addWidget(valueY1,0,1);
-    grid->addWidget(valueX2,0,2);
-    grid->addWidget(valueY2,0,3);
-    grid->addWidget(valueR,0,4);
+    grid->addWidget( controlX1, 0, 0 );
+    grid->addWidget( controlY1, 1, 0 );
+    grid->addWidget( controlX2, 2, 0 );
+    grid->addWidget( controlY2, 3, 0 );
+    grid->addWidget( controlRadius, 4, 0 );
 
-    groupBox->setLayout(grid);
+    groupBox->setFixedSize( 200, 400 );
+    groupBox ->setLayout( grid );
 
-    connect(valueX1,SIGNAL(valueChanged(int)), lemniscate, SLOT(changedX1(int)));
-    connect(valueX2,SIGNAL(valueChanged(int)), lemniscate, SLOT(changedX2(int)));
-    connect(valueY1,SIGNAL(valueChanged(int)), lemniscate, SLOT(changedY1(int)));
-    connect(valueY2,SIGNAL(valueChanged(int)), lemniscate, SLOT(changedY2(int)));
-    connect(valueR,SIGNAL(valueChanged(int)), lemniscate, SLOT(changedR(int)));
+    connect( controlX1, SIGNAL( valueChanged( int ) ), lemnisccate, SLOT( changeX1( int ) ) );
+    connect( controlX2, SIGNAL( valueChanged( int ) ), lemnisccate, SLOT( changeX2( int ) ) );
+    connect( controlY1, SIGNAL( valueChanged( int ) ), lemnisccate, SLOT( changeY1( int ) ) );
+    connect( controlY2, SIGNAL( valueChanged( int ) ), lemnisccate, SLOT( changeY2( int ) ) );
+    connect( controlRadius, SIGNAL( valueChanged( int ) ), lemnisccate, SLOT( changeRadius( int ) ) );
 
-    connect(lemniscate,SIGNAL(valueChangeX1(int)),valueX1,SLOT(setValue(int)));
-    connect(lemniscate,SIGNAL(valueChangeX2(int)),valueX2,SLOT(setValue(int)));
-    connect(lemniscate,SIGNAL(valueChangeY1(int)),valueY1,SLOT(setValue(int)));
-    connect(lemniscate,SIGNAL(valueChangeY2(int)),valueY2,SLOT(setValue(int)));
-    connect(lemniscate,SIGNAL(valueChangeRadius(int)),valueR,SLOT(setValue(int)));
+    connect( lemnisccate, SIGNAL( valueChangedX1( int ) ), controlX1, SLOT( setValue( int ) ) );
+    connect( lemnisccate, SIGNAL( valueChangedX2( int ) ), controlX2, SLOT( setValue( int ) ) );
+    connect( lemnisccate, SIGNAL( valueChangedY1( int ) ), controlY1, SLOT( setValue( int ) ) );
+    connect( lemnisccate, SIGNAL( valueChangedY2( int ) ), controlY2, SLOT( setValue( int ) ) );
+    connect( lemnisccate, SIGNAL( valueChangedRadius( int ) ), controlRadius, SLOT( setValue( int ) ) );
 
     return groupBox;
 }
 
-void MainWindow::createMenus(){
-    openAct = new QAction(tr("Open"), this);
-    connect(openAct, SIGNAL(triggered()), this, SLOT(open()));
+MainWindow::~MainWindow()
+{
 
-    saveAct = new QAction(tr("Save"), this);
-    connect(saveAct, SIGNAL(triggered()), this, SLOT(save()));
-
-    fileMenu = menuBar()->addMenu(tr("File"));
-    fileMenu->addAction(openAct);
-    fileMenu->addAction(saveAct);
 }
