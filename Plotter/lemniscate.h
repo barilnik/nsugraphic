@@ -1,5 +1,5 @@
-#ifndef LEMNISCATEOFBERNOULLI_H
-#define LEMNISCATEOFBERNOULLI_H
+#ifndef PLOTTER_H
+#define PLOTTER_H
 
 #include <QObject>
 #include <QImage>
@@ -8,42 +8,45 @@
 #include <vector>
 #include <algorithm>
 #include <QFile>
+#include <QDomDocument>
 
-#include "resource.h"
-
-class LemniscateOfBernoulli : public QObject
+class Lemniscate : public QObject
 {
     Q_OBJECT
 public:
-    explicit LemniscateOfBernoulli( QObject *parent = 0 );
-    int round( float x );
-    int getX1() const;
-    int getX2() const;
-    int getY1() const;
-    int getY2() const;
-    void Draw( QImage* pBackBuffer );
+    explicit Lemniscate( QObject *parent = 0 );
+    ~Lemniscate();
+     void draw( QImage* pBackBuffer );
+     int getX1() const;
+     int getX2() const;
+     int getY1() const;
+     int getY2() const;
+     int round( float x );
+
+signals:
+     void repaint();
+     void valueChangedX1( int value );
+     void valueChangedX2( int value );
+     void valueChangedY1( int value );
+     void valueChangedY2( int value );
+     void valueChangedRadius( int value );
+
+public slots:
+     void changeX1( int x );
+     void changeX2( int x );
+     void changeY1( int y );
+     void changeY2( int y );
+     void changeRadius( int r );
+
 private:
-    int X1;
-    int X2;
-    int Y1;
-    int Y2;
-    int radius;
     void findStart( int* x, int* y );
     long long calculateError( int x, int y );
     void paintOval( QImage* pBackBuffer );
-signals:
-    void repaint();
-    void valueChangedX1( int value );
-    void valueChangedX2( int value );
-    void valueChangedY1( int value );
-    void valueChangedY2( int value );
-    void valueChangedRadius( int value );
-public slots:
-    void changedX1( int newX1 );
-    void changedX2( int newX2 );
-    void changedY1( int newY1 );
-    void changedY2( int newY2 );
-    void changedR( int newRadius );
+    int positionX1;
+    int positionX2;
+    int positionY1;
+    int positionY2;
+    int positionRadius;
 };
 
-#endif // LEMNISCATEOFBERNOULLI_H
+#endif // PLOTTER_H
