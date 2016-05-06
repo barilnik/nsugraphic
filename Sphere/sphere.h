@@ -8,4 +8,8 @@ public:
     Sphere();
 };
 
+<<<<<<< HEAD
 #endif // SPHERE_H
+=======
+#endif // SPHERE_H
+>>>>>>> circle

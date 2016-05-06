@@ -27,9 +27,17 @@ MainWindow::MainWindow( QWidget *parent ) :
 	drawPanel = new DrawPanel( NULL, circle );
 	this->drawPanel = drawPanel;
 
+<<<<<<< HEAD
 /*	setCentralWidget( widget );
 	mainLayout->setMenuBar( menuBar() );
 	mainLayout->setMargin( 10 );*/
+=======
+    mainLayout->addWidget( drawPanelBoxLayout, 1, 1 );
+    mainLayout->addWidget( controlsPanelBoxLayout, 1, 2 );
+*/
+    setLayout( mainLayout );
+    resize( width, height );
+>>>>>>> circle
 
 	QGroupBox *box = new QGroupBox(tr("Draw panel"), this);
 		QGridLayout *drawPanelLayout = new QGridLayout(this);
@@ -42,6 +50,7 @@ MainWindow::~MainWindow()
 
 }
 
+<<<<<<< HEAD
 void MainWindow::save()
 {
 	//Save File
@@ -51,4 +60,11 @@ void MainWindow::load()
 {
 	//Load File
 }
+=======
+void MainWindow::setSize( int width, int height )
+{
+    resize( width, height );
+}
+
+>>>>>>> circle
 

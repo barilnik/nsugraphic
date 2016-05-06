@@ -14,6 +14,14 @@ Circle::Circle( int posX, int posY, int radius ) : x( posX ), y( posY ), radius(
 Circle::~Circle()
 {
 
+<<<<<<< HEAD
+=======
+
+void Circle::setPositionY( int value )
+{
+    this->y = value;
+    emit valueChanged( value );
+>>>>>>> circle
 }
 int myRound( int var )
 {

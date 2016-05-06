@@ -8,4 +8,8 @@ public:
     ControlsPanel();
 };
 
+<<<<<<< HEAD
 #endif // CONTROLSPANEL_H
+=======
+#endif // CONTROLSPANEL_H
+>>>>>>> circle

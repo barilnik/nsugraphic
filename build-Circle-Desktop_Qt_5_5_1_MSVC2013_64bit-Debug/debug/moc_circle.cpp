@@ -20,7 +20,7 @@
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_Circle_t {
     QByteArrayData data[7];
-    char stringdata0[42];
+    char stringdata0[63];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -33,13 +33,13 @@ QT_MOC_LITERAL(0, 0, 6), // "Circle"
 QT_MOC_LITERAL(1, 7, 12), // "valueChanged"
 QT_MOC_LITERAL(2, 20, 0), // ""
 QT_MOC_LITERAL(3, 21, 5), // "value"
-QT_MOC_LITERAL(4, 27, 4), // "setX"
-QT_MOC_LITERAL(5, 32, 4), // "setY"
-QT_MOC_LITERAL(6, 37, 4) // "setR"
+QT_MOC_LITERAL(4, 27, 12), // "setPositionX"
+QT_MOC_LITERAL(5, 40, 12), // "setPositionY"
+QT_MOC_LITERAL(6, 53, 9) // "setRadius"
 
     },
-    "Circle\0valueChanged\0\0value\0setX\0setY\0"
-    "setR"
+    "Circle\0valueChanged\0\0value\0setPositionX\0"
+    "setPositionY\0setRadius"
 };
 #undef QT_MOC_LITERAL
 
@@ -82,9 +82,9 @@ void Circle::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->valueChanged((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 1: _t->setX((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 2: _t->setY((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 3: _t->setR((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 1: _t->setPositionX((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 2: _t->setPositionY((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 3: _t->setRadius((*reinterpret_cast< int(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {

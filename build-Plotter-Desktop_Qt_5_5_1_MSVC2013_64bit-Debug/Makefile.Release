@@ -335,11 +335,21 @@ release\moc_mainwindow.cpp: C:\Qt\5.5\msvc2013_64\include\QtWidgets\QMainWindow 
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QSlider \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qslider.h \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qabstractslider.h \
+<<<<<<< HEAD
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QMenuBar \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qmenubar.h \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qmenu.h \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qaction.h \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qactiongroup.h \
+=======
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QAction \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qaction.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qactiongroup.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QMenu \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qmenu.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QMenuBar \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qmenubar.h \
+>>>>>>> circle
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QFileDialog \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qfiledialog.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qdir.h \
@@ -349,8 +359,11 @@ release\moc_mainwindow.cpp: C:\Qt\5.5\msvc2013_64\include\QtWidgets\QMainWindow 
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qmessagebox.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\QTextStream \
 		..\Plotter\menu.h \
+<<<<<<< HEAD
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QMenu \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QAction \
+=======
+>>>>>>> circle
 		..\Plotter\jsondocument.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\QJsonDocument \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qjsondocument.h \
@@ -1203,11 +1216,21 @@ release\main.obj: ..\Plotter\main.cpp ../Plotter/mainwindow.h \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QSlider \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qslider.h \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qabstractslider.h \
+<<<<<<< HEAD
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QMenuBar \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qmenubar.h \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qmenu.h \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qaction.h \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qactiongroup.h \
+=======
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QAction \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qaction.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qactiongroup.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QMenu \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qmenu.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QMenuBar \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qmenubar.h \
+>>>>>>> circle
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QFileDialog \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qfiledialog.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qdir.h \
@@ -1217,8 +1240,11 @@ release\main.obj: ..\Plotter\main.cpp ../Plotter/mainwindow.h \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qmessagebox.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\QTextStream \
 		../Plotter/menu.h \
+<<<<<<< HEAD
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QMenu \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QAction \
+=======
+>>>>>>> circle
 		../Plotter/jsondocument.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\QJsonDocument \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qjsondocument.h \
@@ -1371,11 +1397,21 @@ release\mainwindow.obj: ..\Plotter\mainwindow.cpp ../Plotter/mainwindow.h \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QSlider \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qslider.h \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qabstractslider.h \
+<<<<<<< HEAD
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QMenuBar \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qmenubar.h \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qmenu.h \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qaction.h \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qactiongroup.h \
+=======
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QAction \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qaction.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qactiongroup.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QMenu \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qmenu.h \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QMenuBar \
+		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qmenubar.h \
+>>>>>>> circle
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QFileDialog \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qfiledialog.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qdir.h \
@@ -1385,8 +1421,11 @@ release\mainwindow.obj: ..\Plotter\mainwindow.cpp ../Plotter/mainwindow.h \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\qmessagebox.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\QTextStream \
 		../Plotter/menu.h \
+<<<<<<< HEAD
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QMenu \
 		C:\Qt\5.5\msvc2013_64\include\QtWidgets\QAction \
+=======
+>>>>>>> circle
 		../Plotter/jsondocument.h \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\QJsonDocument \
 		C:\Qt\5.5\msvc2013_64\include\QtCore\qjsondocument.h \
